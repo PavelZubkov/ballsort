@@ -1,0 +1,30 @@
+$hype_ballsort_app $mol_view
+	title \BALL SORT
+	page? \start
+	Start_page $mol_list
+		rows /
+			<= Title $mol_view
+				sub /
+					<= Title_begin $mol_view sub / \BALL
+					<= Title_end $mol_view sub / \SORT
+			<= Start $hype_ballsort_button
+				title \Start game
+				click <= page*game
+	Game_page $mol_list
+		rows /
+			<= Control $mol_row
+				sub /
+					<= Home $hype_ballsort_button
+						title \←
+						click <= page*start
+					<= Restart $hype_ballsort_button
+						title \Restart 
+					<= Moves $mol_view
+						sub / <= moves \Moves: {count}
+			<= Tube $hype_ballsort_tube
+				Ball_roof <= Ball $hype_ballsort_ball
+				balls /
+					- <= Ball1 $hype_ballsort_ball
+					- <= Ball2 $hype_ballsort_ball
+					- <= Ball3 $hype_ballsort_ball
+					<= Ball4 $hype_ballsort_ball

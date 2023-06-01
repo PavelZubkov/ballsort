@@ -17,6 +17,7 @@ jobs:
     - uses: hyoo-ru/mam_build@master2
       with:
         package: 'hype/ballsort'
+        modules: 'app'
     
     - uses: JamesIves/github-pages-deploy-action@v4
       with:

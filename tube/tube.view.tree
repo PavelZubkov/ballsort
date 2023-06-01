@@ -1,0 +1,6 @@
+$hype_ballsort_tube $mol_list
+	attr *
+		data-complete <= complete false
+	rows /
+		<= Roof $mol_view sub / <= Ball_roof null
+		<= Balls $mol_list rows <= balls /$hype_ballsort_ball

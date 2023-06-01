@@ -1,0 +1,4 @@
+$hype_ballsort_ball $mol_view
+	style *
+		--main-color <= color_main \#8F7E22
+		--light-color <= color_light \#FFE600
