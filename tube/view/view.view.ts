@@ -17,6 +17,10 @@ namespace $.$$ {
 			return this.tube().balls()[index]
 		}
 
+		complete() {
+			return this.tube().complete()
+		}
+
 	}
 
 }

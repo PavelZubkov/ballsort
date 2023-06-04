@@ -1,13 +1,13 @@
 $hype_ballsort_tube_view $mol_list
 	tube $hype_ballsort_tube
 	active false
-	attr *
-		data-complete <= complete false
 	event *
 		click? <=> click? null
 	rows /
 		<= Roof $mol_view sub / <= roof null
 		<= Balls $mol_view
+			attr *
+				data-complete <= complete false
 			sub <= balls /
 				<= Ball*0 $hype_ballsort_ball_view
 					ball <= ball* $hype_ballsort_ball

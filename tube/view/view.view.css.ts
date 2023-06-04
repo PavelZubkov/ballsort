@@ -10,7 +10,7 @@ namespace $.$$ {
 			justifyContent: 'center',
 			border: {
 				bottom: {
-					width: '4px',
+					// width: '4px',
 					style: 'solid',
 					color: 'lightgray',
 				},

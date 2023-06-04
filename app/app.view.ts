@@ -42,13 +42,6 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem_key
-		tube_complete( index: number ) {
-			const bool = this.game().tube_complete( this.tube(index) )
-			console.log(index, bool)
-			return bool
-		}
-
-		@ $mol_mem_key
 		tube_active( index: number ) {
 			return this.game().tube_active() === this.tube(index) 
 		}

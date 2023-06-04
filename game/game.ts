@@ -2,18 +2,39 @@ namespace $ {
 
 	export class $hype_ballsort_game extends $mol_object {
 
-		tube_size() { return 4 }
-
 		color_count() { return 4 }
+
+		tube_size() { return 4 }
 
 		tube_empty_count() { return 2 }
 
+		tube_count() { return this.color_count() + this.tube_empty_count() }
+
 		ball_count() { return this.tube_size() * this.color_count() }
+
+		@$mol_mem_key
+		Ball( index: number ) {
+			return new $hype_ballsort_ball
+		}
+
+		ball_color( index: number ) {
+			return index % this.tube_size()
+		}
+
+		@$mol_mem_key
+		Tube( index: number ) {
+			const obj = new $hype_ballsort_tube
+			obj.size = () => this.tube_size()
+			return obj
+		}
 
 		@$mol_mem
 		balls() {
-			const balls = $mol_range2( index => new $hype_ballsort_ball( index % this.tube_size() ), () => this.ball_count() )
-			return [ ...balls ]
+			return Array.from( { length: this.ball_count() } ).map( ( _, index ) => {
+				const obj = this.Ball( index )
+				obj.color( index % this.tube_size() )
+				return obj
+			} )
 		}
 
 		@$mol_mem
@@ -21,10 +42,11 @@ namespace $ {
 			const balls = $mol_array_shuffle( this.balls() )
 			const size = this.tube_size()
 
-			const tubes = $mol_range2( index => new $hype_ballsort_tube( balls.slice( index * size, index * size + size ) ), () => this.color_count() )
-			const empty = $mol_range2( () => new $hype_ballsort_tube, () => this.tube_empty_count() )
-
-			return [ ...tubes, ...empty ]
+			return Array.from( { length: this.tube_count() } ).map( ( _, index ) => {
+				const obj = this.Tube( index )
+				obj.balls( index < this.color_count() ? balls.slice( index * size, index * size + size ) : [] )
+				return obj
+			} )
 		}
 
 		@$mol_mem
@@ -32,22 +54,16 @@ namespace $ {
 			return next ?? 0
 		}
 
-		@ $mol_mem_key
-		tube_complete( obj: $hype_ballsort_tube ) {
-			if( obj.balls().length !== this.tube_size() ) return false
-
-			const [ ball, ...balls ] = obj.balls()
-			return balls.every( item => item.color() === ball.color() )
-		}
-
-		@ $mol_mem
-		tube_active( next?: $hype_ballsort_tube | null ) {
-			return next ?? null
+		@$mol_mem
+		finished() {
+			return this.tubes().every( tube => tube.complete() || tube.balls().length === 0 )
 		}
 
 		@$mol_mem
-		finished() {
-			return this.tubes().every( tube => this.tube_complete( tube ) )
+		tube_active( next?: $hype_ballsort_tube | null ) {
+			if (next?.balls().length === 0) return null
+			if (next?.complete()) return null
+			return next ?? null
 		}
 
 		ball_move( to: $hype_ballsort_tube ) {

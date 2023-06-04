@@ -4,15 +4,22 @@ $hype_ballsort_app $mol_view
 	Start_page $mol_list
 		rows /
 			<= Title $mol_view
+				dom_name \h2
 				sub /
 					<= Title_begin $mol_view sub / \BALL
 					<= Title_end $mol_view sub / \SORT
 			<= Start $hype_ballsort_button
 				title \Start game
 				click? <=> start? null
+			<= Links $mol_view
+				sub /
+					<= Source $hype_ballsort_link
+						title \Source Code
+						href \https://github.com/PavelZubkov/ballsort
+						target \_blank
 	Game_page $mol_list
 		rows /
-			<= Control $mol_row
+			<= Control $mol_view
 				sub /
 					<= Home $hype_ballsort_button
 						title \←
@@ -27,10 +34,11 @@ $hype_ballsort_app $mol_view
 					<= Tube*0 $hype_ballsort_tube_view
 						tube <= tube* $hype_ballsort_tube
 						click? <=> tube_click*? null
-						complete <= tube_complete* false
 						active <= tube_active* false
+			<= Links
 	Finish_page $mol_list
 		rows /
 			<= Control
 			<= Tubes
 			<= Finish $mol_view sub / \Won
+			<= Links
