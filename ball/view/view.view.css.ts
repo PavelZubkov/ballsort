@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	$mol_style_define( $hype_ballsort_ball, {
+	$mol_style_define( $hype_ballsort_ball_view, {
 
 		width: '2rem',
 		height: '2rem',

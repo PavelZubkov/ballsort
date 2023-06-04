@@ -2,16 +2,43 @@ namespace $.$$ {
 
 	export class $hype_ballsort_app extends $.$hype_ballsort_app {
 
-		@ $mol_mem
-		page(next?: 'start' | 'game' | 'finish') {
-			return next ?? super.page()
+		@$mol_mem
+		game(next?: $hype_ballsort_game | null) {
+			return next ?? null!
 		}
 
+		@ $mol_mem
 		sub() {
-			return [
-				... this.page() === 'start' ? [this.Start_page()] : [],
-				... this.page() === 'game' ? [this.Game_page()] : [],
-			]
+			if (!this.game()) return [ this.Start_page() ]
+			return [ this.game().finished() === false ? this.Game_page() : this.Finish_page() ]
+		}
+
+		@ $mol_mem
+		tubes() {
+			return this.game().tubes().map( ( _, index ) => this.Tube( index ) )
+		}
+
+		tube( index: number ) {
+			return this.game().Tube(index)
+		}
+
+		moves() {
+			return super.moves().replace( '{count}', `${ this.game().moves() }` )
+		}
+
+		@ $mol_action
+		home() {
+			this.game(null)
+		}
+
+		@ $mol_action
+		start() {
+			this.game( new $hype_ballsort_game )
+		}
+
+		@ $mol_action
+		tube_click( index: number ) {
+			this.game().tube_click( this.tube(index) )
 		}
 
 	}

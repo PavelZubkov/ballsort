@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	$mol_style_define( $hype_ballsort_tube, {
+	$mol_style_define( $hype_ballsort_tube_view, {
 
 		width: '3rem',
 
@@ -18,9 +18,13 @@ namespace $.$$ {
 		},
 
 		Balls: {
-			height: '10rem',
-			justifyContent: 'flex-end',
+			flex: {
+				direction: 'column-reverse',
+			},
+			justifyContent: 'flex-start',
 			alignItems: 'center',
+
+			height: '10rem',
 
 			border: {
 				width: '2px',
