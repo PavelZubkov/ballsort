@@ -19,7 +19,7 @@ jobs:
         package: 'hype/ballsort'
         modules: 'app'
     
-    - uses: JamesIves/github-pages-deploy-action@v4.4.1
+    - uses: hyoo-ru/gh-deploy@v4.4.1
+      if: github.ref == 'refs/heads/master'
       with:
-        branch: gh-pages
         folder: 'hype/ballsort/app/-'
