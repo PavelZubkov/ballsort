@@ -1,5 +1,6 @@
 $hype_ballsort_tube_view $mol_list
 	tube $hype_ballsort_tube
+	active false
 	attr *
 		data-complete <= complete false
 	event *

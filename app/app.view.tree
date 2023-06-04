@@ -27,6 +27,8 @@ $hype_ballsort_app $mol_view
 					<= Tube*0 $hype_ballsort_tube_view
 						tube <= tube* $hype_ballsort_tube
 						click? <=> tube_click*? null
+						complete <= tube_complete* false
+						active <= tube_active* false
 	Finish_page $mol_list
 		rows /
 			<= Control

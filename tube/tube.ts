@@ -11,13 +11,6 @@ namespace $ {
 			return next ?? this.balls_default
 		}
 
-		active() { return false }
-
-		@ $mol_mem
-		complete(next?: boolean) {
-			return next ?? false
-		}
-
 		take() {
 			const next = this.balls()
 			const ball = next.pop()

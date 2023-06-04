@@ -19,7 +19,7 @@ namespace $.$$ {
 		}
 
 		tube( index: number ) {
-			return this.game().Tube(index)
+			return this.game().tubes()[index]
 		}
 
 		moves() {
@@ -39,6 +39,18 @@ namespace $.$$ {
 		@ $mol_action
 		tube_click( index: number ) {
 			this.game().tube_click( this.tube(index) )
+		}
+
+		@ $mol_mem_key
+		tube_complete( index: number ) {
+			const bool = this.game().tube_complete( this.tube(index) )
+			console.log(index, bool)
+			return bool
+		}
+
+		@ $mol_mem_key
+		tube_active( index: number ) {
+			return this.game().tube_active() === this.tube(index) 
 		}
 
 	}

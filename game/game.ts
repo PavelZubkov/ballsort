@@ -16,25 +16,12 @@ namespace $ {
 			return [ ...balls ]
 		}
 
-		@$mol_mem_key
-		Tube( index: number ) {
-			const obj = new $hype_ballsort_tube
-			obj.complete = () => this.tube_complete( obj )
-			obj.active = () => this.tube_active() === obj
-			return obj
-		}
-
 		@$mol_mem
 		tubes() {
 			const balls = $mol_array_shuffle( this.balls() )
 			const size = this.tube_size()
 
-			const tubes = $mol_range2( index => {
-				const obj = this.Tube( index )
-				obj.balls( balls.slice( index * size, index * size + size ) )
-				return obj
-			}, () => this.color_count() )
-
+			const tubes = $mol_range2( index => new $hype_ballsort_tube( balls.slice( index * size, index * size + size ) ), () => this.color_count() )
 			const empty = $mol_range2( () => new $hype_ballsort_tube, () => this.tube_empty_count() )
 
 			return [ ...tubes, ...empty ]
@@ -45,7 +32,7 @@ namespace $ {
 			return next ?? 0
 		}
 
-		@$mol_mem_key
+		@ $mol_mem_key
 		tube_complete( obj: $hype_ballsort_tube ) {
 			if( obj.balls().length !== this.tube_size() ) return false
 
@@ -53,14 +40,14 @@ namespace $ {
 			return balls.every( item => item.color() === ball.color() )
 		}
 
-		@$mol_mem
-		finished() {
-			return this.tubes().every( tube => this.tube_complete( tube ) )
-		}
-
 		@ $mol_mem
 		tube_active( next?: $hype_ballsort_tube | null ) {
 			return next ?? null
+		}
+
+		@$mol_mem
+		finished() {
+			return this.tubes().every( tube => this.tube_complete( tube ) )
 		}
 
 		ball_move( to: $hype_ballsort_tube ) {
