@@ -68,10 +68,14 @@ namespace $ {
 
 		ball_move( to: $hype_ballsort_tube ) {
 			const from = this.tube_active()
-			if( !from || from.balls()?.length === 0 ) return
+
+			if (to.balls().length && to.balls().at(-1)?.color() !== from?.balls().at(-1)?.color()) return
+
+			if (to === from || !from) return this.tube_active(null)
 
 			const ball = from.take()!
 			to.put( ball )
+
 			this.moves( this.moves() + 1 )
 			this.tube_active( null )
 		}

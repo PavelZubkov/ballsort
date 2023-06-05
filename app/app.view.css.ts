@@ -52,6 +52,39 @@ namespace $.$$ {
 			margin: '1rem',
 		},
 
+		Finish: {
+			position: 'fixed',
+			bottom: 0,
+			top: 0,
+			left: 0,
+			right: 0,
+			background: {
+				color: $mol_style_func.rgba(255, 255, 255, 0.6),
+			},
+			backdropFilter: 'blur(6px)',
+			alignItems: 'center',
+			paddingTop: '5rem',
+		},
+
+		Finish_title: {
+			color: 'black',
+			textShadow: '0 0 2px white',
+		},
+
+		Finish_moves: {
+			color: 'black',
+			textShadow: '0 0 2px white',
+			margin: {
+				top: '1rem',
+			},
+		},
+
+		Finish_home: {
+			margin: {
+				top: '1rem',
+			},
+		},
+
 	} )
 
 }

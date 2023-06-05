@@ -6,6 +6,7 @@ $hype_ballsort_tube_view $mol_list
 	rows /
 		<= Roof $mol_view sub / <= roof null
 		<= Balls $mol_view
+			style * min-height \10rem
 			attr *
 				data-complete <= complete false
 			sub <= balls /

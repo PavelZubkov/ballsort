@@ -2,9 +2,10 @@ namespace $.$$ {
 
 	$mol_style_define( $hype_ballsort_tube_view, {
 
-		width: '3rem',
+		boxSizing: 'content-box',
 
 		Roof: {
+			boxSizing: 'content-box',
 			height: '3rem',
 			alignItems: 'center',
 			justifyContent: 'center',
@@ -18,13 +19,13 @@ namespace $.$$ {
 		},
 
 		Balls: {
+			boxSizing: 'content-box',
+			width: '3rem',
 			flex: {
 				direction: 'column-reverse',
 			},
 			justifyContent: 'flex-start',
 			alignItems: 'center',
-
-			height: '10rem',
 
 			border: {
 				width: '2px',

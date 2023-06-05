@@ -13,9 +13,25 @@ $hype_ballsort_app $mol_view
 				click? <=> start? null
 			<= Links $mol_view
 				sub /
-					<= Source $hype_ballsort_link
-						title \Source Code
-						href \https://github.com/PavelZubkov/ballsort
+					<= Effector $hype_ballsort_link
+						title \Effector
+						href \https://github.com/sergeysova/ballsort/blob/master/src/pages/home/model.ts
+						target \_blank
+					<= Reatom $hype_ballsort_link
+						title \Reatom
+						href \https://github.com/faustienf/ballsort/blob/main/src/app/model.ts
+						target \_blank
+					<= Vue $hype_ballsort_link
+						title \Vue
+						href \https://github.com/Sdju/ballsort-example-vue/blob/main/src/components/TheGame.vue
+						target \_blank
+					<= Mol $hype_ballsort_link
+						title \$mol another version
+						href \https://github.com/Lyumih/milis/blob/main/ballsort/board/board.ts
+						target \_blank
+					<= Sources $hype_ballsort_link
+						title \This Source Code
+						href \https://github.com/PavelZubkov/ballsort/blob/master/game/game.ts
 						target \_blank
 	Game_page $mol_list
 		rows /
@@ -40,5 +56,15 @@ $hype_ballsort_app $mol_view
 		rows /
 			<= Control
 			<= Tubes
-			<= Finish $mol_view sub / \Won
 			<= Links
+			<= Finish $mol_list
+				rows /
+					<= Finish_title $mol_view
+						dom_name \h1
+						sub / \You won!
+					<= Finish_moves $mol_view
+						dom_name \h2
+						sub / \In 16 moves
+					<= Finish_home $hype_ballsort_button
+						title \New game
+						click? <=> home?

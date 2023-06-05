@@ -4,6 +4,7 @@ namespace $.$$ {
 
 		width: '2rem',
 		height: '2rem',
+		boxSizing: 'content-box',
 
 		border: {
 			radius: '50%',
