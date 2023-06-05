@@ -798,7 +798,7 @@ declare namespace $ {
         moves(next?: number): number;
         finished(): boolean;
         tube_active(next?: $hype_ballsort_tube | null): $hype_ballsort_tube | null;
-        ball_move(to: $hype_ballsort_tube): void;
+        ball_move(to: $hype_ballsort_tube): $hype_ballsort_tube | null | undefined;
         tube_click(tube: $hype_ballsort_tube): void;
     }
 }
@@ -1114,7 +1114,11 @@ declare namespace $ {
         Title(): $mol_view;
         start(next?: any): any;
         Start(): $hype_ballsort_button;
-        Source(): $hype_ballsort_link;
+        Effector(): $hype_ballsort_link;
+        Reatom(): $hype_ballsort_link;
+        Vue(): $hype_ballsort_link;
+        Mol(): $hype_ballsort_link;
+        Sources(): $hype_ballsort_link;
         Links(): $mol_view;
         home(next?: any): any;
         Home(): $hype_ballsort_button;
@@ -1128,7 +1132,10 @@ declare namespace $ {
         Tube(id: any): $$.$hype_ballsort_tube_view;
         tubes(): readonly any[];
         Tubes(): $mol_view;
-        Finish(): $mol_view;
+        Finish_title(): $mol_view;
+        Finish_moves(): $mol_view;
+        Finish_home(): $hype_ballsort_button;
+        Finish(): $$.$mol_list;
     }
 }
 

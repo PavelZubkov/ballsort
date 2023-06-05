@@ -2484,8 +2484,10 @@ var $;
         }
         ball_move(to) {
             const from = this.tube_active();
-            if (!from || from.balls()?.length === 0)
+            if (to.balls().length && to.balls().at(-1)?.color() !== from?.balls().at(-1)?.color())
                 return;
+            if (to === from || !from)
+                return this.tube_active(null);
             const ball = from.take();
             to.put(ball);
             this.moves(this.moves() + 1);
@@ -3120,6 +3122,7 @@ var $;
         $mol_style_define($hype_ballsort_ball_view, {
             width: '2rem',
             height: '2rem',
+            boxSizing: 'content-box',
             border: {
                 radius: '50%',
                 width: '2px',
@@ -3190,6 +3193,9 @@ var $;
         }
         Balls() {
             const obj = new this.$.$mol_view();
+            obj.style = () => ({
+                "min-height": "10rem"
+            });
             obj.attr = () => ({
                 "data-complete": this.complete()
             });
@@ -3256,8 +3262,9 @@ var $;
     var $$;
     (function ($$) {
         $mol_style_define($hype_ballsort_tube_view, {
-            width: '3rem',
+            boxSizing: 'content-box',
             Roof: {
+                boxSizing: 'content-box',
                 height: '3rem',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -3269,12 +3276,13 @@ var $;
                 },
             },
             Balls: {
+                boxSizing: 'content-box',
+                width: '3rem',
                 flex: {
                     direction: 'column-reverse',
                 },
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                height: '10rem',
                 border: {
                     width: '2px',
                     style: 'solid',
@@ -3362,8 +3370,8 @@ var $;
             obj.rows = () => [
                 this.Control(),
                 this.Tubes(),
-                this.Finish(),
-                this.Links()
+                this.Links(),
+                this.Finish()
             ];
             return obj;
         }
@@ -3401,17 +3409,49 @@ var $;
             obj.click = (next) => this.start(next);
             return obj;
         }
-        Source() {
+        Effector() {
             const obj = new this.$.$hype_ballsort_link();
-            obj.title = () => "Source Code";
-            obj.href = () => "https://github.com/PavelZubkov/ballsort";
+            obj.title = () => "Effector";
+            obj.href = () => "https://github.com/sergeysova/ballsort/blob/master/src/pages/home/model.ts";
+            obj.target = () => "_blank";
+            return obj;
+        }
+        Reatom() {
+            const obj = new this.$.$hype_ballsort_link();
+            obj.title = () => "Reatom";
+            obj.href = () => "https://github.com/faustienf/ballsort/blob/main/src/app/model.ts";
+            obj.target = () => "_blank";
+            return obj;
+        }
+        Vue() {
+            const obj = new this.$.$hype_ballsort_link();
+            obj.title = () => "Vue";
+            obj.href = () => "https://github.com/Sdju/ballsort-example-vue/blob/main/src/components/TheGame.vue";
+            obj.target = () => "_blank";
+            return obj;
+        }
+        Mol() {
+            const obj = new this.$.$hype_ballsort_link();
+            obj.title = () => "$mol another version";
+            obj.href = () => "https://github.com/Lyumih/milis/blob/main/ballsort/board/board.ts";
+            obj.target = () => "_blank";
+            return obj;
+        }
+        Sources() {
+            const obj = new this.$.$hype_ballsort_link();
+            obj.title = () => "This Source Code";
+            obj.href = () => "https://github.com/PavelZubkov/ballsort/blob/master/game/game.ts";
             obj.target = () => "_blank";
             return obj;
         }
         Links() {
             const obj = new this.$.$mol_view();
             obj.sub = () => [
-                this.Source()
+                this.Effector(),
+                this.Reatom(),
+                this.Vue(),
+                this.Mol(),
+                this.Sources()
             ];
             return obj;
         }
@@ -3480,10 +3520,34 @@ var $;
             obj.sub = () => this.tubes();
             return obj;
         }
-        Finish() {
+        Finish_title() {
             const obj = new this.$.$mol_view();
+            obj.dom_name = () => "h1";
             obj.sub = () => [
-                "Won"
+                "You won!"
+            ];
+            return obj;
+        }
+        Finish_moves() {
+            const obj = new this.$.$mol_view();
+            obj.dom_name = () => "h2";
+            obj.sub = () => [
+                "In 16 moves"
+            ];
+            return obj;
+        }
+        Finish_home() {
+            const obj = new this.$.$hype_ballsort_button();
+            obj.title = () => "New game";
+            obj.click = (next) => this.home(next);
+            return obj;
+        }
+        Finish() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => [
+                this.Finish_title(),
+                this.Finish_moves(),
+                this.Finish_home()
             ];
             return obj;
         }
@@ -3517,7 +3581,19 @@ var $;
     ], $hype_ballsort_app.prototype, "Start", null);
     __decorate([
         $mol_mem
-    ], $hype_ballsort_app.prototype, "Source", null);
+    ], $hype_ballsort_app.prototype, "Effector", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_app.prototype, "Reatom", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_app.prototype, "Vue", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_app.prototype, "Mol", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_app.prototype, "Sources", null);
     __decorate([
         $mol_mem
     ], $hype_ballsort_app.prototype, "Links", null);
@@ -3548,6 +3624,15 @@ var $;
     __decorate([
         $mol_mem
     ], $hype_ballsort_app.prototype, "Tubes", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_app.prototype, "Finish_title", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_app.prototype, "Finish_moves", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_app.prototype, "Finish_home", null);
     __decorate([
         $mol_mem
     ], $hype_ballsort_app.prototype, "Finish", null);
@@ -3734,6 +3819,35 @@ var $;
             },
             Tube: {
                 margin: '1rem',
+            },
+            Finish: {
+                position: 'fixed',
+                bottom: 0,
+                top: 0,
+                left: 0,
+                right: 0,
+                background: {
+                    color: $mol_style_func.rgba(255, 255, 255, 0.6),
+                },
+                backdropFilter: 'blur(6px)',
+                alignItems: 'center',
+                paddingTop: '5rem',
+            },
+            Finish_title: {
+                color: 'black',
+                textShadow: '0 0 2px white',
+            },
+            Finish_moves: {
+                color: 'black',
+                textShadow: '0 0 2px white',
+                margin: {
+                    top: '1rem',
+                },
+            },
+            Finish_home: {
+                margin: {
+                    top: '1rem',
+                },
             },
         });
     })($$ = $.$$ || ($.$$ = {}));
