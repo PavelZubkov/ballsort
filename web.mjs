@@ -3779,6 +3779,13 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    $mol_style_attach("hype/ballsort/app/app.view.css", "@media (orientation: portrait) and (max-height: 840px) {\n  :root {\n    font-size: 13px;\n  }\n}\n\n@media (orientation: portrait) and (max-height: 740px) {\n  :root {\n    font-size: 12px;\n  }\n}\n\n@media (orientation: landscape) and (max-width: 740px) {\n  :root {\n    font-size: 12px;\n  }\n}\n\n@media (orientation: portrait) and (max-height: 645px) {\n  :root {\n    font-size: 11px;\n  }\n}\n\n@media (orientation: portrait) and (max-height: 570px) {\n  :root {\n    font-size: 10px;\n  }\n}\n");
+})($ || ($ = {}));
+//hype/ballsort/app/-css/app.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
     var $$;
     (function ($$) {
         $mol_style_define($hype_ballsort_app, {
@@ -3806,6 +3813,9 @@ var $;
                     top: '1rem',
                 },
                 justifyContent: 'center',
+                flex: {
+                    wrap: 'wrap',
+                },
             },
             Start_page: {
                 alignItems: 'center',
@@ -3813,6 +3823,9 @@ var $;
             Moves: {
                 padding: ['0.6rem', '0.4rem'],
                 fontSize: '1.3rem',
+            },
+            Tubes: {
+                justifyContent: 'center',
             },
             Control: {
                 justifyContent: 'center',
