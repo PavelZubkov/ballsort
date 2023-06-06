@@ -33,6 +33,9 @@ namespace $.$$ {
 				top: '1rem',
 			},
 			justifyContent: 'center',
+			flex: {
+				wrap: 'wrap',
+			},
 		},
 
 		Start_page: {
@@ -42,6 +45,10 @@ namespace $.$$ {
 		Moves: {
 			padding: ['0.6rem', '0.4rem'],
 			fontSize: '1.3rem',
+		},
+
+		Tubes: {
+			justifyContent: 'center',
 		},
 
 		Control: {
