@@ -17,8 +17,13 @@ namespace $ {
 			return new $hype_ballsort_ball
 		}
 
-		ball_color( index: number ) {
-			return index % this.tube_size()
+		@$mol_mem
+		balls() {
+			return Array.from( { length: this.ball_count() } ).map( ( _, index ) => {
+				const obj = this.Ball( index )
+				obj.color( index % this.tube_size() )
+				return obj
+			} )
 		}
 
 		@$mol_mem_key
@@ -29,22 +34,14 @@ namespace $ {
 		}
 
 		@$mol_mem
-		balls() {
-			return Array.from( { length: this.ball_count() } ).map( ( _, index ) => {
-				const obj = this.Ball( index )
-				obj.color( index % this.tube_size() )
-				return obj
-			} )
-		}
-
-		@$mol_mem
 		tubes() {
 			const balls = $mol_array_shuffle( this.balls() )
 			const size = this.tube_size()
 
 			return Array.from( { length: this.tube_count() } ).map( ( _, index ) => {
 				const obj = this.Tube( index )
-				obj.balls( index < this.color_count() ? balls.slice( index * size, index * size + size ) : [] )
+				const list = index < this.color_count() ? balls.slice( index * size, index * size + size ) : []
+				obj.balls( list )
 				return obj
 			} )
 		}
@@ -52,11 +49,6 @@ namespace $ {
 		@$mol_mem
 		moves( next?: number ) {
 			return next ?? 0
-		}
-
-		@$mol_mem
-		finished() {
-			return this.tubes().every( tube => tube.complete() || tube.balls().length === 0 )
 		}
 
 		@$mol_mem
@@ -69,9 +61,9 @@ namespace $ {
 		ball_move( to: $hype_ballsort_tube ) {
 			const from = this.tube_active()
 
-			if (to.balls().length && to.balls().at(-1)?.color() !== from?.balls().at(-1)?.color()) return
-
 			if (to === from || !from) return this.tube_active(null)
+
+			if (to.balls().length && to.balls().at(-1)?.color() !== from?.balls().at(-1)?.color()) return
 
 			const ball = from.take()!
 			to.put( ball )
@@ -84,6 +76,11 @@ namespace $ {
 			const tube_active = this.tube_active()
 
 			tube_active === null ? this.tube_active( tube ) : this.ball_move( tube )
+		}
+
+		@ $mol_mem
+		finished() {
+			return this.tubes().every( tube => tube.complete() || tube.balls().length === 0 )
 		}
 
 	}
