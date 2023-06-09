@@ -619,16 +619,12 @@ declare namespace $ {
 
 declare namespace $ {
     class $hype_ballsort_ball extends $mol_object {
-        color_default: number;
-        constructor(color_default?: number);
         color(next?: number): number;
     }
 }
 
 declare namespace $ {
     class $hype_ballsort_tube extends $mol_object {
-        balls_default: $hype_ballsort_ball[];
-        constructor(balls_default?: $hype_ballsort_ball[]);
         size(): number;
         balls(next?: $hype_ballsort_ball[]): $hype_ballsort_ball[];
         complete(): boolean;
@@ -649,15 +645,14 @@ declare namespace $ {
         tube_count(): number;
         ball_count(): number;
         Ball(index: number): $hype_ballsort_ball;
-        ball_color(index: number): number;
-        Tube(index: number): $hype_ballsort_tube;
         balls(): $hype_ballsort_ball[];
+        Tube(index: number): $hype_ballsort_tube;
         tubes(): $hype_ballsort_tube[];
         moves(next?: number): number;
-        finished(): boolean;
         tube_active(next?: $hype_ballsort_tube | null): $hype_ballsort_tube | null;
         ball_move(to: $hype_ballsort_tube): $hype_ballsort_tube | null | undefined;
         tube_click(tube: $hype_ballsort_tube): void;
+        finished(): boolean;
     }
 }
 

@@ -2366,13 +2366,8 @@ var $;
 var $;
 (function ($) {
     class $hype_ballsort_ball extends $mol_object {
-        color_default;
-        constructor(color_default = 0) {
-            super();
-            this.color_default = color_default;
-        }
         color(next) {
-            return next ?? this.color_default;
+            return next ?? 0;
         }
     }
     __decorate([
@@ -2386,16 +2381,11 @@ var $;
 var $;
 (function ($) {
     class $hype_ballsort_tube extends $mol_object {
-        balls_default;
-        constructor(balls_default = []) {
-            super();
-            this.balls_default = balls_default;
-        }
         size() {
             return 0;
         }
         balls(next) {
-            return next ?? this.balls_default;
+            return next ?? [];
         }
         complete() {
             const [ball, ...balls] = this.balls();
@@ -2450,14 +2440,6 @@ var $;
         Ball(index) {
             return new $hype_ballsort_ball;
         }
-        ball_color(index) {
-            return index % this.tube_size();
-        }
-        Tube(index) {
-            const obj = new $hype_ballsort_tube;
-            obj.size = () => this.tube_size();
-            return obj;
-        }
         balls() {
             return Array.from({ length: this.ball_count() }).map((_, index) => {
                 const obj = this.Ball(index);
@@ -2465,20 +2447,23 @@ var $;
                 return obj;
             });
         }
+        Tube(index) {
+            const obj = new $hype_ballsort_tube;
+            obj.size = () => this.tube_size();
+            return obj;
+        }
         tubes() {
             const balls = $mol_array_shuffle(this.balls());
             const size = this.tube_size();
             return Array.from({ length: this.tube_count() }).map((_, index) => {
                 const obj = this.Tube(index);
-                obj.balls(index < this.color_count() ? balls.slice(index * size, index * size + size) : []);
+                const list = index < this.color_count() ? balls.slice(index * size, index * size + size) : [];
+                obj.balls(list);
                 return obj;
             });
         }
         moves(next) {
             return next ?? 0;
-        }
-        finished() {
-            return this.tubes().every(tube => tube.complete() || tube.balls().length === 0);
         }
         tube_active(next) {
             if (next?.balls().length === 0)
@@ -2489,10 +2474,10 @@ var $;
         }
         ball_move(to) {
             const from = this.tube_active();
-            if (to.balls().length && to.balls().at(-1)?.color() !== from?.balls().at(-1)?.color())
-                return;
             if (to === from || !from)
                 return this.tube_active(null);
+            if (to.balls().length && to.balls().at(-1)?.color() !== from?.balls().at(-1)?.color())
+                return;
             const ball = from.take();
             to.put(ball);
             this.moves(this.moves() + 1);
@@ -2502,16 +2487,19 @@ var $;
             const tube_active = this.tube_active();
             tube_active === null ? this.tube_active(tube) : this.ball_move(tube);
         }
+        finished() {
+            return this.tubes().every(tube => tube.complete() || tube.balls().length === 0);
+        }
     }
     __decorate([
         $mol_mem_key
     ], $hype_ballsort_game.prototype, "Ball", null);
     __decorate([
-        $mol_mem_key
-    ], $hype_ballsort_game.prototype, "Tube", null);
-    __decorate([
         $mol_mem
     ], $hype_ballsort_game.prototype, "balls", null);
+    __decorate([
+        $mol_mem_key
+    ], $hype_ballsort_game.prototype, "Tube", null);
     __decorate([
         $mol_mem
     ], $hype_ballsort_game.prototype, "tubes", null);
@@ -2520,10 +2508,10 @@ var $;
     ], $hype_ballsort_game.prototype, "moves", null);
     __decorate([
         $mol_mem
-    ], $hype_ballsort_game.prototype, "finished", null);
+    ], $hype_ballsort_game.prototype, "tube_active", null);
     __decorate([
         $mol_mem
-    ], $hype_ballsort_game.prototype, "tube_active", null);
+    ], $hype_ballsort_game.prototype, "finished", null);
     $.$hype_ballsort_game = $hype_ballsort_game;
 })($ || ($ = {}));
 //hype/ballsort/game/game.ts
