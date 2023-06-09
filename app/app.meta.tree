@@ -1,5 +1,0 @@
-deploy \/hype/ballsort/logo/logo.png
-deploy \/hype/ballsort/logo/logo.ico
-deploy \/hype/ballsort/manifest.json
-
-include \/mol/offline/install
