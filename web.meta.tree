@@ -12,7 +12,6 @@
 \/mol/view
 	include \/mol/view/tree/test
 \/hype/ballsort/app
-	deploy \/hype/ballsort/logo/logo.png
-	deploy \/hype/ballsort/logo/logo.ico
+	deploy \/mol/logo/logo.svg
 	deploy \/hype/ballsort/manifest.json
 	include \/mol/offline/install
