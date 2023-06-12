@@ -19,7 +19,7 @@ namespace $.$$ {
 		}
 
 		tube( index: number ) {
-			return this.game().tubes()[index]
+			return this.game().Tube(index)
 		}
 
 		moves() {
