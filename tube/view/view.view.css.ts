@@ -3,6 +3,7 @@ namespace $.$$ {
 	$mol_style_define( $hype_ballsort_tube_view, {
 
 		boxSizing: 'content-box',
+		width: 'fit-content',
 
 		Roof: {
 			boxSizing: 'content-box',

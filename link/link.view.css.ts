@@ -4,7 +4,6 @@ namespace $.$$ {
 		
 		color: 'lightgray',
 		padding: ['0.25rem', '1rem'],
-	//   display: inline-block;
 		
 	} )
 	

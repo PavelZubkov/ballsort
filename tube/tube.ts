@@ -2,8 +2,9 @@ namespace $ {
 
 	export class $hype_ballsort_tube extends $mol_object {
 
-		size() {
+		size(): number {
 			return 0
+			throw new Error('Not implemted')
 		}
 
 		@ $mol_mem

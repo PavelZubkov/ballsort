@@ -26,16 +26,6 @@ namespace $.$$ {
 			borderColor: 'lightblue',
 		},
 
-		'@': {
-			'data-selected': {
-				true: {
-					borderColor: 'gray',
-					backgroudColor: 'gray',
-					color: 'white',
-				},
-			},
-		},
-
 	} )
 
 }
