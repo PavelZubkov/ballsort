@@ -3980,5 +3980,24 @@ var $;
     $.$mol_view_tree_compile = $mol_view_tree_compile;
 })($ || ($ = {}));
 //mol/view/tree/tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        $mol_test({
+            "Screan changing"() {
+                const app = new $hype_ballsort_app;
+                $mol_assert_like(app.sub(), [app.Start_page()]);
+                app.start();
+                $mol_assert_like(app.sub(), [app.Game_page()]);
+                app.game().balls().forEach(obj => obj.color(0));
+                $mol_assert_like(app.sub(), [app.Finish_page()]);
+            },
+        });
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//hype/ballsort/app/app.view.test.ts
 
 //# sourceMappingURL=web.test.js.map

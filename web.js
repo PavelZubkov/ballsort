@@ -1873,8 +1873,8 @@ var $;
         static calc(value) {
             return new $mol_style_func('calc', value);
         }
-        static vary(name) {
-            return new $mol_style_func('var', name);
+        static vary(name, defaultValue) {
+            return new $mol_style_func('var', defaultValue ? [name, defaultValue] : name);
         }
         static url(href) {
             return new $mol_style_func('url', JSON.stringify(href));
@@ -1891,13 +1891,61 @@ var $;
         static scale(zoom) {
             return new $mol_style_func('scale', [zoom]);
         }
+        static linear(...breakpoints) {
+            return new $mol_style_func("linear", breakpoints.map((e) => Array.isArray(e)
+                ? String(e[0]) +
+                    " " +
+                    (typeof e[1] === "number" ? e[1] + "%" : e[1].toString())
+                : String(e)));
+        }
         static cubic_bezier(x1, y1, x2, y2) {
             return new $mol_style_func('cubic-bezier', [x1, y1, x2, y2]);
+        }
+        static steps(value, step_position) {
+            return new $mol_style_func('steps', [value, step_position]);
+        }
+        static blur(value) {
+            return new $mol_style_func('blur', value ?? "");
+        }
+        static brightness(value) {
+            return new $mol_style_func('brightness', value ?? "");
+        }
+        static contrast(value) {
+            return new $mol_style_func('contrast', value ?? "");
+        }
+        static drop_shadow(color, x_offset, y_offset, blur_radius) {
+            return new $mol_style_func("drop-shadow", blur_radius
+                ? [color, x_offset, y_offset, blur_radius]
+                : [color, x_offset, y_offset]);
+        }
+        static grayscale(value) {
+            return new $mol_style_func('grayscale', value ?? "");
+        }
+        static hue_rotate(value) {
+            return new $mol_style_func('hue-rotate', value ?? "");
+        }
+        static invert(value) {
+            return new $mol_style_func('invert', value ?? "");
+        }
+        static opacity(value) {
+            return new $mol_style_func('opacity', value ?? "");
+        }
+        static sepia(value) {
+            return new $mol_style_func('sepia', value ?? "");
+        }
+        static saturate(value) {
+            return new $mol_style_func('saturate', value ?? "");
         }
     }
     $.$mol_style_func = $mol_style_func;
 })($ || ($ = {}));
 //mol/style/func/func.ts
+;
+"use strict";
+//mol/type/override/override.ts
+;
+"use strict";
+//mol/style/properties/properties.ts
 ;
 "use strict";
 var $;
@@ -2383,6 +2431,7 @@ var $;
     class $hype_ballsort_tube extends $mol_object {
         size() {
             return 0;
+            throw new Error('Not implemted');
         }
         balls(next) {
             return next ?? [];
@@ -2826,12 +2875,6 @@ var $;
 //hype/ballsort/button/-view.tree/button.view.tree.ts
 ;
 "use strict";
-//mol/type/override/override.ts
-;
-"use strict";
-//mol/style/properties/properties.ts
-;
-"use strict";
 //mol/style/pseudo/class.ts
 ;
 "use strict";
@@ -2970,15 +3013,6 @@ var $;
                 outline: 'none',
                 boxShadow: '0 0 0 4px lightblue',
                 borderColor: 'lightblue',
-            },
-            '@': {
-                'data-selected': {
-                    true: {
-                        borderColor: 'gray',
-                        backgroudColor: 'gray',
-                        color: 'white',
-                    },
-                },
             },
         });
     })($$ = $.$$ || ($.$$ = {}));
@@ -3185,14 +3219,14 @@ var $;
             ];
         }
         Balls() {
-            const obj = new this.$.$mol_view();
+            const obj = new this.$.$mol_list();
             obj.style = () => ({
                 "min-height": "10rem"
             });
             obj.attr = () => ({
                 "data-complete": this.complete()
             });
-            obj.sub = () => this.balls();
+            obj.rows = () => this.balls();
             return obj;
         }
     }
@@ -3256,6 +3290,7 @@ var $;
     (function ($$) {
         $mol_style_define($hype_ballsort_tube_view, {
             boxSizing: 'content-box',
+            width: 'fit-content',
             Roof: {
                 boxSizing: 'content-box',
                 height: '3rem',
@@ -3725,7 +3760,7 @@ var $;
                 return this.game().tubes().map((_, index) => this.Tube(index));
             }
             tube(index) {
-                return this.game().tubes()[index];
+                return this.game().Tube(index);
             }
             moves() {
                 return super.moves().replace('{count}', `${this.game().moves()}`);
@@ -3782,16 +3817,16 @@ var $;
     var $$;
     (function ($$) {
         $mol_style_define($hype_ballsort_app, {
+            fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
+            color: '#e1e1e1',
+            lineHeight: 'normal',
             padding: {
                 top: '1rem',
             },
             justifyContent: 'center',
-            fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
             background: {
                 color: '#101526',
             },
-            color: '#e1e1e1',
-            lineHeight: 'normal',
             Title: {
                 font: {
                     size: '3rem',
@@ -3835,7 +3870,7 @@ var $;
                 background: {
                     color: $mol_style_func.rgba(255, 255, 255, 0.6),
                 },
-                backdropFilter: 'blur(6px)',
+                backdropFilter: $mol_style_func.blur('6px'),
                 alignItems: 'center',
                 paddingTop: '5rem',
             },
