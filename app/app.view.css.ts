@@ -67,7 +67,7 @@ namespace $.$$ {
 			background: {
 				color: $mol_style_func.rgba(255, 255, 255, 0.6),
 			},
-			backdropFilter: 'blur(6px)',
+			backdropFilter: $mol_style_func.blur( '6px' as any ),
 			alignItems: 'center',
 			paddingTop: '5rem',
 		},
