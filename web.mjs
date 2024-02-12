@@ -11,7 +11,7 @@ var $;
 (function ($) {
 })($ || ($ = {}));
 module.exports = $;
-//mam.ts
+
 ;
 
 $node[ "../mam.ts" ] = $node[ "../mam.ts" ] = module.exports }.call( {} , {} )
@@ -38,7 +38,7 @@ var $;
     }
     $.$mol_ambient = $mol_ambient;
 })($ || ($ = {}));
-//mol/ambient/ambient.ts
+
 ;
 "use strict";
 var $;
@@ -75,7 +75,7 @@ var $;
         value: (obj) => instances.has(obj),
     });
 })($ || ($ = {}));
-//mol/delegate/delegate.ts
+
 ;
 "use strict";
 var $;
@@ -131,7 +131,7 @@ var $;
     }
     $.$mol_owning_catch = $mol_owning_catch;
 })($ || ($ = {}));
-//mol/owning/owning.ts
+
 ;
 "use strict";
 var $;
@@ -141,7 +141,7 @@ var $;
     }
     $.$mol_fail = $mol_fail;
 })($ || ($ = {}));
-//mol/fail/fail.ts
+
 ;
 "use strict";
 var $;
@@ -151,10 +151,10 @@ var $;
     }
     $.$mol_fail_hidden = $mol_fail_hidden;
 })($ || ($ = {}));
-//mol/fail/hidden/hidden.ts
+
 ;
 "use strict";
-//mol/type/writable/writable.ts
+
 ;
 "use strict";
 var $;
@@ -186,7 +186,7 @@ var $;
     }
     $.$mol_func_name_from = $mol_func_name_from;
 })($ || ($ = {}));
-//mol/func/name/name.ts
+
 ;
 "use strict";
 var $;
@@ -229,7 +229,7 @@ var $;
     }
     $.$mol_object2 = $mol_object2;
 })($ || ($ = {}));
-//mol/object2/object2.ts
+
 ;
 "use strict";
 var $;
@@ -249,7 +249,7 @@ var $;
     }
     $_1.$mol_object = $mol_object;
 })($ || ($ = {}));
-//mol/object/object.ts
+
 ;
 "use strict";
 var $;
@@ -262,7 +262,7 @@ var $;
         $mol_wire_cursor[$mol_wire_cursor["final"] = -4] = "final";
     })($mol_wire_cursor = $.$mol_wire_cursor || ($.$mol_wire_cursor = {}));
 })($ || ($ = {}));
-//mol/wire/cursor/cursor.ts
+
 ;
 "use strict";
 var $;
@@ -329,10 +329,10 @@ var $;
     }
     $.$mol_wire_pub = $mol_wire_pub;
 })($ || ($ = {}));
-//mol/wire/pub/pub.ts
+
 ;
 "use strict";
-//mol/wire/sub/sub.ts
+
 ;
 "use strict";
 var $;
@@ -344,7 +344,7 @@ var $;
     $.$mol_wire_auto = $mol_wire_auto;
     $.$mol_wire_affected = [];
 })($ || ($ = {}));
-//mol/wire/wire.ts
+
 ;
 "use strict";
 var $;
@@ -446,7 +446,7 @@ var $;
         'margin-left': '13px'
     });
 })($ || ($ = {}));
-//mol/dev/format/format.ts
+
 ;
 "use strict";
 var $;
@@ -590,7 +590,7 @@ var $;
     }
     $.$mol_wire_pub_sub = $mol_wire_pub_sub;
 })($ || ($ = {}));
-//mol/wire/pub/sub/sub.ts
+
 ;
 "use strict";
 var $;
@@ -631,7 +631,7 @@ var $;
     }
     $.$mol_after_frame = $mol_after_frame;
 })($ || ($ = {}));
-//mol/after/frame/frame.web.ts
+
 ;
 "use strict";
 var $;
@@ -641,7 +641,7 @@ var $;
     }
     $.$mol_promise_like = $mol_promise_like;
 })($ || ($ = {}));
-//mol/promise/like/like.ts
+
 ;
 "use strict";
 var $;
@@ -864,7 +864,7 @@ var $;
     }
     $.$mol_wire_fiber = $mol_wire_fiber;
 })($ || ($ = {}));
-//mol/wire/fiber/fiber.ts
+
 ;
 "use strict";
 var $;
@@ -879,7 +879,7 @@ var $;
     }
     $.$mol_guid = $mol_guid;
 })($ || ($ = {}));
-//mol/guid/guid.ts
+
 ;
 "use strict";
 var $;
@@ -926,7 +926,7 @@ var $;
     }
     $.$mol_key = $mol_key;
 })($ || ($ = {}));
-//mol/key/key.ts
+
 ;
 "use strict";
 var $;
@@ -1065,7 +1065,7 @@ var $;
         return Object.is(left[Symbol.toPrimitive]('default'), right[Symbol.toPrimitive]('default'));
     }
 })($ || ($ = {}));
-//mol/compare/deep/deep.ts
+
 ;
 "use strict";
 var $;
@@ -1089,10 +1089,10 @@ var $;
     $.$mol_log3_area_lazy = $mol_log3_area_lazy;
     $.$mol_log3_stack = [];
 })($ || ($ = {}));
-//mol/log3/log3.ts
+
 ;
 "use strict";
-//mol/type/keys/extract/extract.ts
+
 ;
 "use strict";
 var $;
@@ -1121,7 +1121,7 @@ var $;
     $.$mol_log3_rise = $mol_log3_web_make('log', 'magenta');
     $.$mol_log3_area = $mol_log3_web_make('group', 'cyan');
 })($ || ($ = {}));
-//mol/log3/log3.web.ts
+
 ;
 "use strict";
 var $;
@@ -1182,7 +1182,7 @@ var $;
     }
     $.$mol_wire_task = $mol_wire_task;
 })($ || ($ = {}));
-//mol/wire/task/task.ts
+
 ;
 "use strict";
 var $;
@@ -1208,13 +1208,13 @@ var $;
     }
     $.$mol_wire_method = $mol_wire_method;
 })($ || ($ = {}));
-//mol/wire/method/method.ts
+
 ;
 "use strict";
-//mol/type/tail/tail.ts
+
 ;
 "use strict";
-//mol/type/foot/foot.ts
+
 ;
 "use strict";
 var $;
@@ -1232,7 +1232,7 @@ var $;
     }
     $.$mol_fail_catch = $mol_fail_catch;
 })($ || ($ = {}));
-//mol/fail/catch/catch.ts
+
 ;
 "use strict";
 var $;
@@ -1247,7 +1247,7 @@ var $;
     }
     $.$mol_fail_log = $mol_fail_log;
 })($ || ($ = {}));
-//mol/fail/log/log.ts
+
 ;
 "use strict";
 var $;
@@ -1377,7 +1377,7 @@ var $;
     ], $mol_wire_atom.prototype, "once", null);
     $.$mol_wire_atom = $mol_wire_atom;
 })($ || ($ = {}));
-//mol/wire/atom/atom.ts
+
 ;
 "use strict";
 var $;
@@ -1415,7 +1415,7 @@ var $;
     }
     $.$mol_wire_solo = $mol_wire_solo;
 })($ || ($ = {}));
-//mol/wire/solo/solo.ts
+
 ;
 "use strict";
 var $;
@@ -1453,7 +1453,7 @@ var $;
     }
     $.$mol_wire_plex = $mol_wire_plex;
 })($ || ($ = {}));
-//mol/wire/plex/plex.ts
+
 ;
 "use strict";
 var $;
@@ -1461,7 +1461,7 @@ var $;
     $.$mol_mem = $mol_wire_solo;
     $.$mol_mem_key = $mol_wire_plex;
 })($ || ($ = {}));
-//mol/mem/mem.ts
+
 ;
 "use strict";
 var $;
@@ -1485,20 +1485,20 @@ var $;
     $.$mol_window = $mol_window;
     self.addEventListener('resize', event => $mol_window.resizes(event));
 })($ || ($ = {}));
-//mol/window/window.web.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
 })($ || ($ = {}));
-//mol/dom/context/context.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $.$mol_dom_context = self;
 })($ || ($ = {}));
-//mol/dom/context/context.web.ts
+
 ;
 "use strict";
 var $;
@@ -1522,7 +1522,7 @@ var $;
     }
     $.$mol_after_tick = $mol_after_tick;
 })($ || ($ = {}));
-//mol/after/tick/tick.ts
+
 ;
 "use strict";
 var $;
@@ -1552,7 +1552,7 @@ var $;
     ], $mol_view_selection, "focused", null);
     $.$mol_view_selection = $mol_view_selection;
 })($ || ($ = {}));
-//mol/view/selection/selection.ts
+
 ;
 "use strict";
 var $;
@@ -1562,7 +1562,7 @@ var $;
     }
     $.$mol_maybe = $mol_maybe;
 })($ || ($ = {}));
-//mol/maybe/maybe.ts
+
 ;
 "use strict";
 var $;
@@ -1573,7 +1573,7 @@ var $;
         }, true);
     }
 })($ || ($ = {}));
-//mol/view/selection/selection.web.ts
+
 ;
 "use strict";
 var $;
@@ -1611,7 +1611,7 @@ var $;
     }
     $.$mol_wrapper = $mol_wrapper;
 })($ || ($ = {}));
-//mol/wrapper/wrapper.ts
+
 ;
 "use strict";
 var $;
@@ -1630,7 +1630,7 @@ var $;
     }
     $.$mol_memo = $mol_memo;
 })($ || ($ = {}));
-//mol/memo/memo.ts
+
 ;
 "use strict";
 var $;
@@ -1640,7 +1640,7 @@ var $;
     }
     $.$mol_dom_qname = $mol_dom_qname;
 })($ || ($ = {}));
-//mol/dom/qname/qname.ts
+
 ;
 "use strict";
 var $;
@@ -1660,7 +1660,7 @@ var $;
     }
     $.$mol_wire_probe = $mol_wire_probe;
 })($ || ($ = {}));
-//mol/wire/probe/probe.ts
+
 ;
 "use strict";
 var $;
@@ -1676,7 +1676,7 @@ var $;
     }
     $.$mol_wire_watch = $mol_wire_watch;
 })($ || ($ = {}));
-//mol/wire/watch/watch.ts
+
 ;
 "use strict";
 var $;
@@ -1690,7 +1690,7 @@ var $;
     }
     $.$mol_const = $mol_const;
 })($ || ($ = {}));
-//mol/const/const.ts
+
 ;
 "use strict";
 var $;
@@ -1708,7 +1708,7 @@ var $;
     const nothing = () => { };
     const sub = new $mol_wire_pub_sub;
 })($ || ($ = {}));
-//mol/wire/solid/solid.ts
+
 ;
 "use strict";
 var $;
@@ -1734,7 +1734,7 @@ var $;
     }
     $.$mol_dom_render_attributes = $mol_dom_render_attributes;
 })($ || ($ = {}));
-//mol/dom/render/attributes/attributes.ts
+
 ;
 "use strict";
 var $;
@@ -1746,7 +1746,7 @@ var $;
     }
     $.$mol_dom_render_events = $mol_dom_render_events;
 })($ || ($ = {}));
-//mol/dom/render/events/events.ts
+
 ;
 "use strict";
 var $;
@@ -1766,7 +1766,7 @@ var $;
     }
     $.$mol_dom_render_styles = $mol_dom_render_styles;
 })($ || ($ = {}));
-//mol/dom/render/styles/styles.ts
+
 ;
 "use strict";
 var $;
@@ -1821,7 +1821,7 @@ var $;
     }
     $.$mol_dom_render_children = $mol_dom_render_children;
 })($ || ($ = {}));
-//mol/dom/render/children/children.ts
+
 ;
 "use strict";
 var $;
@@ -1836,7 +1836,7 @@ var $;
     }
     $.$mol_dom_render_fields = $mol_dom_render_fields;
 })($ || ($ = {}));
-//mol/dom/render/fields/fields.ts
+
 ;
 "use strict";
 var $;
@@ -1866,10 +1866,10 @@ var $;
     }
     $.$mol_wire_async = $mol_wire_async;
 })($ || ($ = {}));
-//mol/wire/async/async.ts
+
 ;
 "use strict";
-//mol/type/pick/pick.ts
+
 ;
 "use strict";
 var $;
@@ -1901,7 +1901,7 @@ var $;
     }
     $.$mol_style_attach = $mol_style_attach;
 })($ || ($ = {}));
-//mol/style/attach/attach.ts
+
 ;
 "use strict";
 var $;
@@ -1920,7 +1920,7 @@ var $;
     }
     $.$mol_decor = $mol_decor;
 })($ || ($ = {}));
-//mol/decor/decor.ts
+
 ;
 "use strict";
 var $;
@@ -1965,7 +1965,7 @@ var $;
     }
     $.$mol_style_unit = $mol_style_unit;
 })($ || ($ = {}));
-//mol/style/unit/unit.ts
+
 ;
 "use strict";
 var $;
@@ -2051,13 +2051,13 @@ var $;
     }
     $.$mol_style_func = $mol_style_func;
 })($ || ($ = {}));
-//mol/style/func/func.ts
+
 ;
 "use strict";
-//mol/type/override/override.ts
+
 ;
 "use strict";
-//mol/style/properties/properties.ts
+
 ;
 "use strict";
 var $;
@@ -2071,7 +2071,7 @@ var $;
     }
     $.$mol_style_prop = $mol_style_prop;
 })($ || ($ = {}));
-//mol/style/prop/prop.ts
+
 ;
 "use strict";
 var $;
@@ -2091,14 +2091,14 @@ var $;
         'image',
     ]);
 })($ || ($ = {}));
-//mol/theme/theme.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/theme/theme.css", ":root {\n\t--mol_theme_hue: 210deg;\n\t--mol_theme_hue_spread: 90deg;\n}\n\n:where([mol_theme]) {\n\tcolor: var(--mol_theme_text);\n\tfill: var(--mol_theme_text);\n\tbackground-color: var(--mol_theme_back);\n}\n\t\n:root, [mol_theme=\"$mol_theme_dark\"], :where([mol_theme=\"$mol_theme_dark\"]) [mol_theme]  {\n\n\t--mol_theme_luma: -1;\n\t--mol_theme_image: invert(1) hue-rotate( 180deg );\n\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 20%, 10% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 50%, 20%, .25 );\n\t--mol_theme_field: hsl( var(--mol_theme_hue), 50%, 8%, .25 );\n\t--mol_theme_hover: hsl( var(--mol_theme_hue), 0%, 50%, .1 );\n\t\n\t--mol_theme_text: hsl( var(--mol_theme_hue), 0%, 80% );\n\t--mol_theme_shade: hsl( var(--mol_theme_hue), 0%, 60%, 1 );\n\t--mol_theme_line: hsl( var(--mol_theme_hue), 0%, 50%, .2 );\n\t--mol_theme_focus: hsl( calc( var(--mol_theme_hue) + 180deg ), 100%, 65% );\n\t\n\t--mol_theme_control: hsl( var(--mol_theme_hue), 60%, 65% );\n\t--mol_theme_current: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 60%, 65% );\n\t--mol_theme_special: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 60%, 65% );\n\n\t/* --mol_theme_back: oklch( 20% .03 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 35% .05 var(--mol_theme_hue) / .25 );\n\t--mol_theme_field: oklch( 0% 0 var(--mol_theme_hue) / .25 );\n\t--mol_theme_hover: oklch( 70% 0 var(--mol_theme_hue) / .1 );\n\t\n\t--mol_theme_text: oklch( 80% 0 var(--mol_theme_hue) );\n\t--mol_theme_shade: oklch( 60% 0 var(--mol_theme_hue) );\n\t--mol_theme_line: oklch( 50% 0 var(--mol_theme_hue) / .2 );\n\t--mol_theme_focus: oklch( 80% .2 calc( var(--mol_theme_hue) + 120deg ) );\n\t\n\t--mol_theme_control: oklch( 70% .1 var(--mol_theme_hue) );\n\t--mol_theme_current: oklch( 80% .2 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_special: oklch( 80% .3 calc( var(--mol_theme_hue) + 60deg ) ); */\n\n}\n\n[mol_theme=\"$mol_theme_light\"], :where([mol_theme=\"$mol_theme_light\"]) [mol_theme] {\n\t\n\t--mol_theme_luma: 1;\n\t--mol_theme_image: none;\n\t\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 20%, 85% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 50%, 100%, .25 );\n\t--mol_theme_field: hsl( var(--mol_theme_hue), 50%, 100%, .25 );\n\t--mol_theme_hover: hsl( var(--mol_theme_hue), 0%, 50%, .1 );\n\t\n\t--mol_theme_text: hsl( var(--mol_theme_hue), 0%, 0% );\n\t--mol_theme_shade: hsl( var(--mol_theme_hue), 0%, 40%, 1 );\n\t--mol_theme_line: hsl( var(--mol_theme_hue), 0%, 50%, .2 );\n\t--mol_theme_focus: hsl( calc( var(--mol_theme_hue) + 180deg ), 100%, 40% );\n\t\n\t--mol_theme_control: hsl( var(--mol_theme_hue), 80%, 30% );\n\t--mol_theme_current: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 80%, 30% );\n\t--mol_theme_special: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 80%, 30% );\n\t\n\t/* --mol_theme_back: oklch( 93% .01 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 100% .02 var(--mol_theme_hue) / .25 );\n\t--mol_theme_field: oklch( 100% 0 var(--mol_theme_hue) / .5 );\n\t--mol_theme_hover: oklch( 70% 0 var(--mol_theme_hue) / .1 );\n\t\n\t--mol_theme_text: oklch( 20% 0 var(--mol_theme_hue) );\n\t--mol_theme_shade: oklch( 60% 0 var(--mol_theme_hue) );\n\t--mol_theme_line: oklch( 70% 0 var(--mol_theme_hue) / .2 );\n\t--mol_theme_focus: oklch( 20% .8 calc( var(--mol_theme_hue) + 120deg ) );\n\t\n\t--mol_theme_control: oklch( 45% .25 var(--mol_theme_hue) );\n\t--mol_theme_current: oklch( 45% .5 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_special: oklch( 45% .5 calc( var(--mol_theme_hue) + 60deg ) ); */\n\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_base\"] {\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 50%, 30% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 40%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 25% .05 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 35% .1 var(--mol_theme_hue) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_base\"] {\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 50%, 80% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 80%, 95%, .25 );\n\t/* --mol_theme_back: oklch( 95% .02 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 80% .05 var(--mol_theme_hue) / .25 ); */\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_accent\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + 180deg ), 90%, 30% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + 180deg ), 80%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 40% .2 calc( var(--mol_theme_hue) + 120deg ) );\n\t--mol_theme_card: oklch( 50% .3 calc( var(--mol_theme_hue) + 120deg ) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_accent\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + 180deg ), 90%, 75% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + 180deg ), 80%, 90%, .25 );\n\t/* --mol_theme_back: oklch( 90% .03 calc( var(--mol_theme_hue) + 120deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) + 120deg ) / .25 ); */\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_current\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 50%, 30% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 40%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 25% .05 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_card: oklch( 35% .1 calc( var(--mol_theme_hue) - 60deg ) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_current\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 50%, 80% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 80%, 95%, .25 );\n\t/* --mol_theme_back: oklch( 95% .02 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) - 60deg ) / .25 ); */\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_special\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 50%, 30% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 40%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 25% .05 calc( var(--mol_theme_hue) + 60deg ) );\n\t--mol_theme_card: oklch( 35% .1 calc( var(--mol_theme_hue) + 60deg ) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_special\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 50%, 80% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 80%, 95%, .25 );\n\t/* --mol_theme_back: oklch( 95% .02 calc( var(--mol_theme_hue) + 60deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) + 60deg ) / .25 ); */\n}\n");
 })($ || ($ = {}));
-//mol/theme/-css/theme.css.ts
+
 ;
 "use strict";
 var $;
@@ -2111,14 +2111,14 @@ var $;
         'blur',
     ]);
 })($ || ($ = {}));
-//mol/gap/gap.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/gap/gap.css", ":root {\n\t--mol_gap_block: .75rem;\n\t--mol_gap_text: .5rem .75rem;\n\t--mol_gap_round: .25rem;\n\t--mol_gap_space: .25rem;\n\t--mol_gap_blur: .5rem;\n}\n");
 })($ || ($ = {}));
-//mol/gap/-css/gap.css.ts
+
 ;
 "use strict";
 var $;
@@ -2550,21 +2550,21 @@ var $;
     ], $mol_view, "view_classes", null);
     $.$mol_view = $mol_view;
 })($ || ($ = {}));
-//mol/view/view/view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/view/view/view.css", "[mol_view] {\n\ttransition-property: height, width, min-height, min-width, max-width, max-height, transform;\n\ttransition-duration: .2s;\n\ttransition-timing-function: ease-out;\n\t-webkit-appearance: none;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n\tflex-shrink: 0;\n\tcontain: style;\n\tscrollbar-color: var(--mol_theme_line) transparent;\n\tscrollbar-width: thin;\n}\t\n\n[mol_view]::selection {\n\tbackground: var(--mol_theme_line);\n}\t\n\n[mol_view]::-webkit-scrollbar {\n\twidth: .25rem;\n\theight: .25rem;\n}\n\n[mol_view]::-webkit-scrollbar-corner {\n\tbackground-color: var(--mol_theme_line);\n}\n\n[mol_view]::-webkit-scrollbar-track {\n\tbackground-color: transparent;\n}\n\n[mol_view]::-webkit-scrollbar-thumb {\n\tbackground-color: var(--mol_theme_line);\n\tborder-radius: var(--mol_gap_round);\n}\n\n[mol_view] > * {\n\tword-break: inherit;\n}\n\n[mol_view_root] {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 100%;\n\theight: 100%;\n\tbox-sizing: border-box;\n\tfont-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n\tfont-size: 1rem;\n\tline-height: 1.5rem;\n\tbackground: var(--mol_theme_back);\n\tcolor: var(--mol_theme_text);\n\tcontain: unset; /** Fixes bg ignoring when applied to body on Chrome */\n\ttab-size: 4;\n\toverscroll-behavior: contain; /** Disable navigation gestures **/\n}\n\n@media print {\n\t[mol_view_root] {\n\t\theight: auto;\n\t}\n}\n\n[mol_view][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n\tbackground-image: repeating-linear-gradient(\n\t\t-45deg,\n\t\t#f92323,\n\t\t#f92323 .5rem,\n\t\t#ff3d3d .5rem,\n\t\t#ff3d3d 1.5rem\n\t);\n\tcolor: black;\n\talign-items: center;\n\tjustify-content: center;\n}\n\n@keyframes mol_view_wait {\n\tfrom {\n\t\topacity: .25;\n\t}\n\t20% {\n\t\topacity: .75;\n\t}\n\tto {\n\t\topacity: .25;\n\t}\n}\n\n:where([mol_view][mol_view_error=\"Promise\"]) {\n\tbackground: var(--mol_theme_hover);\n}\n\n[mol_view][mol_view_error=\"Promise\"] {\n\tanimation: mol_view_wait 1s steps( 20, end ) infinite;\n}\n");
 })($ || ($ = {}));
-//mol/view/view/-css/view.css.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_dom_context.document?.addEventListener('DOMContentLoaded', () => $mol_view.autobind(), { once: true });
 })($ || ($ = {}));
-//mol/view/view/view.web.ts
+
 ;
 "use strict";
 var $;
@@ -2579,7 +2579,7 @@ var $;
     ], $hype_ballsort_ball.prototype, "color", null);
     $.$hype_ballsort_ball = $hype_ballsort_ball;
 })($ || ($ = {}));
-//hype/ballsort/ball/ball.ts
+
 ;
 "use strict";
 var $;
@@ -2614,7 +2614,7 @@ var $;
     ], $hype_ballsort_tube.prototype, "complete", null);
     $.$hype_ballsort_tube = $hype_ballsort_tube;
 })($ || ($ = {}));
-//hype/ballsort/tube/tube.ts
+
 ;
 "use strict";
 var $;
@@ -2631,7 +2631,7 @@ var $;
     }
     $.$mol_array_shuffle = $mol_array_shuffle;
 })($ || ($ = {}));
-//mol/array/shuffle/shuffle.ts
+
 ;
 "use strict";
 var $;
@@ -2719,67 +2719,50 @@ var $;
     ], $hype_ballsort_game.prototype, "finished", null);
     $.$hype_ballsort_game = $hype_ballsort_game;
 })($ || ($ = {}));
-//hype/ballsort/game/game.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_list extends $mol_view {
-        render_visible_only() {
-            return true;
-        }
-        render_over() {
-            return 0;
-        }
-        sub() {
-            return this.rows();
-        }
-        Empty() {
-            const obj = new this.$.$mol_view();
-            return obj;
-        }
-        Gap_before() {
-            const obj = new this.$.$mol_view();
-            obj.style = () => ({
-                paddingTop: this.gap_before()
-            });
-            return obj;
-        }
-        Gap_after() {
-            const obj = new this.$.$mol_view();
-            obj.style = () => ({
-                paddingTop: this.gap_after()
-            });
-            return obj;
-        }
-        view_window() {
-            return [
-                0,
-                0
-            ];
-        }
-        rows() {
-            return [];
-        }
-        gap_before() {
-            return 0;
-        }
-        gap_after() {
-            return 0;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_list.prototype, "Empty", null);
-    __decorate([
-        $mol_mem
-    ], $mol_list.prototype, "Gap_before", null);
-    __decorate([
-        $mol_mem
-    ], $mol_list.prototype, "Gap_after", null);
-    $.$mol_list = $mol_list;
-})($ || ($ = {}));
-//mol/list/-view.tree/list.view.tree.ts
+	($.$mol_list) = class $mol_list extends ($.$mol_view) {
+		render_visible_only(){
+			return true;
+		}
+		render_over(){
+			return 0;
+		}
+		sub(){
+			return (this.rows());
+		}
+		Empty(){
+			const obj = new this.$.$mol_view();
+			return obj;
+		}
+		Gap_before(){
+			const obj = new this.$.$mol_view();
+			(obj.style) = () => ({"paddingTop": (this.gap_before())});
+			return obj;
+		}
+		Gap_after(){
+			const obj = new this.$.$mol_view();
+			(obj.style) = () => ({"paddingTop": (this.gap_after())});
+			return obj;
+		}
+		view_window(){
+			return [0, 0];
+		}
+		rows(){
+			return [];
+		}
+		gap_before(){
+			return 0;
+		}
+		gap_after(){
+			return 0;
+		}
+	};
+	($mol_mem(($.$mol_list.prototype), "Empty"));
+	($mol_mem(($.$mol_list.prototype), "Gap_before"));
+	($mol_mem(($.$mol_list.prototype), "Gap_after"));
+
+
 ;
 "use strict";
 var $;
@@ -2791,7 +2774,7 @@ var $;
     }
     $.$mol_support_css_overflow_anchor = $mol_support_css_overflow_anchor;
 })($ || ($ = {}));
-//mol/support/css/css.ts
+
 ;
 "use strict";
 var $;
@@ -2816,7 +2799,7 @@ var $;
     }
     $.$mol_dom_listener = $mol_dom_listener;
 })($ || ($ = {}));
-//mol/dom/listener/listener.ts
+
 ;
 "use strict";
 var $;
@@ -2849,14 +2832,20 @@ var $;
     ], $mol_print, "active", null);
     $.$mol_print = $mol_print;
 })($ || ($ = {}));
-//mol/print/print.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $.$mol_mem_cached = $mol_wire_probe;
 })($ || ($ = {}));
-//mol/mem/cached/cached.ts
+
+;
+"use strict";
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -2988,59 +2977,48 @@ var $;
         $$.$mol_list = $mol_list;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/list/list.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/list/list.view.css", "[mol_list] {\n\twill-change: contents;\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-shrink: 0;\n\tmax-width: 100%;\n\t/* display: flex;\n\talign-items: stretch;\n\talign-content: stretch; */\n\ttransition: none;\n\tmin-height: 1.5rem;\n}\n\n[mol_list_gap_before] ,\n[mol_list_gap_after] {\n\tdisplay: block !important;\n\tflex: none;\n\ttransition: none;\n\toverflow-anchor: none;\n}\n");
 })($ || ($ = {}));
-//mol/list/-css/list.view.css.ts
+
+;
+	($.$hype_ballsort_button) = class $hype_ballsort_button extends ($.$mol_view) {
+		dom_name(){
+			return "button";
+		}
+		sub(){
+			return [(this.title())];
+		}
+		event(){
+			return {"click": (next) => (this.click(next))};
+		}
+		title(){
+			return "";
+		}
+		click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+	};
+	($mol_mem(($.$hype_ballsort_button.prototype), "click"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $hype_ballsort_button extends $mol_view {
-        dom_name() {
-            return "button";
-        }
-        sub() {
-            return [
-                this.title()
-            ];
-        }
-        event() {
-            return {
-                click: (next) => this.click(next)
-            };
-        }
-        title() {
-            return "";
-        }
-        click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_button.prototype, "click", null);
-    $.$hype_ballsort_button = $hype_ballsort_button;
-})($ || ($ = {}));
-//hype/ballsort/button/-view.tree/button.view.tree.ts
+
 ;
 "use strict";
-//mol/style/pseudo/class.ts
+
 ;
 "use strict";
-//mol/style/pseudo/element.ts
+
 ;
 "use strict";
-//mol/type/error/error.ts
-;
-"use strict";
-//mol/style/guard/guard.ts
+
 ;
 "use strict";
 var $;
@@ -3138,7 +3116,7 @@ var $;
     }
     $.$mol_style_sheet = $mol_style_sheet;
 })($ || ($ = {}));
-//mol/style/sheet/sheet.ts
+
 ;
 "use strict";
 var $;
@@ -3148,7 +3126,10 @@ var $;
     }
     $.$mol_style_define = $mol_style_define;
 })($ || ($ = {}));
-//mol/style/define/define.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -3180,39 +3161,33 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//hype/ballsort/button/button.view.css.ts
+
+;
+	($.$hype_ballsort_link) = class $hype_ballsort_link extends ($.$mol_view) {
+		dom_name(){
+			return "a";
+		}
+		attr(){
+			return {"href": (this.href()), "target": (this.target())};
+		}
+		sub(){
+			return [(this.title())];
+		}
+		href(){
+			return "";
+		}
+		target(){
+			return "_self";
+		}
+		title(){
+			return "";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $hype_ballsort_link extends $mol_view {
-        dom_name() {
-            return "a";
-        }
-        attr() {
-            return {
-                href: this.href(),
-                target: this.target()
-            };
-        }
-        sub() {
-            return [
-                this.title()
-            ];
-        }
-        href() {
-            return "";
-        }
-        target() {
-            return "_self";
-        }
-        title() {
-            return "";
-        }
-    }
-    $.$hype_ballsort_link = $hype_ballsort_link;
-})($ || ($ = {}));
-//hype/ballsort/link/-view.tree/link.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -3225,63 +3200,57 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//hype/ballsort/link/link.view.css.ts
+
+;
+	($.$hype_ballsort_ball_view) = class $hype_ballsort_ball_view extends ($.$mol_view) {
+		ball(){
+			const obj = new this.$.$hype_ballsort_ball();
+			return obj;
+		}
+		style(){
+			return {"--main-color": (this.color_main()), "--light-color": (this.color_light())};
+		}
+		colors(){
+			return [
+				"#8F7E22", 
+				"#FFE600", 
+				"#247516", 
+				"#70FF00", 
+				"#466799", 
+				"#00B2FF", 
+				"#29777C", 
+				"#00FFF0", 
+				"#17206F", 
+				"#4A72FF", 
+				"#BABABA", 
+				"#FFFFFF", 
+				"#4C3283", 
+				"#9D50FF", 
+				"#8B11C5", 
+				"#FF00F5", 
+				"#9D0D41", 
+				"#FF60B5", 
+				"#4B0000", 
+				"#FF0000", 
+				"#79480F", 
+				"#FF7A00", 
+				"#343434", 
+				"#B1B1B1"
+			];
+		}
+		color_main(){
+			return "";
+		}
+		color_light(){
+			return "";
+		}
+	};
+	($mol_mem(($.$hype_ballsort_ball_view.prototype), "ball"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $hype_ballsort_ball_view extends $mol_view {
-        ball() {
-            const obj = new this.$.$hype_ballsort_ball();
-            return obj;
-        }
-        style() {
-            return {
-                "--main-color": this.color_main(),
-                "--light-color": this.color_light()
-            };
-        }
-        colors() {
-            return [
-                "#8F7E22",
-                "#FFE600",
-                "#247516",
-                "#70FF00",
-                "#466799",
-                "#00B2FF",
-                "#29777C",
-                "#00FFF0",
-                "#17206F",
-                "#4A72FF",
-                "#BABABA",
-                "#FFFFFF",
-                "#4C3283",
-                "#9D50FF",
-                "#8B11C5",
-                "#FF00F5",
-                "#9D0D41",
-                "#FF60B5",
-                "#4B0000",
-                "#FF0000",
-                "#79480F",
-                "#FF7A00",
-                "#343434",
-                "#B1B1B1"
-            ];
-        }
-        color_main() {
-            return "";
-        }
-        color_light() {
-            return "";
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_ball_view.prototype, "ball", null);
-    $.$hype_ballsort_ball_view = $hype_ballsort_ball_view;
-})($ || ($ = {}));
-//hype/ballsort/ball/view/-view.tree/view.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -3302,7 +3271,7 @@ var $;
         $$.$hype_ballsort_ball_view = $hype_ballsort_ball_view;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//hype/ballsort/ball/view/view.view.ts
+
 ;
 "use strict";
 var $;
@@ -3325,95 +3294,68 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//hype/ballsort/ball/view/view.view.css.ts
+
+;
+	($.$hype_ballsort_tube_view) = class $hype_ballsort_tube_view extends ($.$mol_list) {
+		tube(){
+			const obj = new this.$.$hype_ballsort_tube();
+			return obj;
+		}
+		active(){
+			return false;
+		}
+		event(){
+			return {"click": (next) => (this.click(next))};
+		}
+		rows(){
+			return [(this.Roof()), (this.Balls())];
+		}
+		click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		roof(){
+			return null;
+		}
+		Roof(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this.roof())]);
+			return obj;
+		}
+		complete(){
+			return false;
+		}
+		ball(id){
+			const obj = new this.$.$hype_ballsort_ball();
+			return obj;
+		}
+		Ball(id){
+			const obj = new this.$.$hype_ballsort_ball_view();
+			(obj.ball) = () => ((this.ball(id)));
+			return obj;
+		}
+		balls(){
+			return [(this.Ball("0"))];
+		}
+		Balls(){
+			const obj = new this.$.$mol_list();
+			(obj.style) = () => ({"min-height": "10rem"});
+			(obj.attr) = () => ({"data-complete": (this.complete())});
+			(obj.rows) = () => ((this.balls()));
+			return obj;
+		}
+	};
+	($mol_mem(($.$hype_ballsort_tube_view.prototype), "tube"));
+	($mol_mem(($.$hype_ballsort_tube_view.prototype), "click"));
+	($mol_mem(($.$hype_ballsort_tube_view.prototype), "Roof"));
+	($mol_mem_key(($.$hype_ballsort_tube_view.prototype), "ball"));
+	($mol_mem_key(($.$hype_ballsort_tube_view.prototype), "Ball"));
+	($mol_mem(($.$hype_ballsort_tube_view.prototype), "Balls"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $hype_ballsort_tube_view extends $mol_list {
-        tube() {
-            const obj = new this.$.$hype_ballsort_tube();
-            return obj;
-        }
-        active() {
-            return false;
-        }
-        event() {
-            return {
-                click: (next) => this.click(next)
-            };
-        }
-        rows() {
-            return [
-                this.Roof(),
-                this.Balls()
-            ];
-        }
-        click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        roof() {
-            return null;
-        }
-        Roof() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.roof()
-            ];
-            return obj;
-        }
-        complete() {
-            return false;
-        }
-        ball(id) {
-            const obj = new this.$.$hype_ballsort_ball();
-            return obj;
-        }
-        Ball(id) {
-            const obj = new this.$.$hype_ballsort_ball_view();
-            obj.ball = () => this.ball(id);
-            return obj;
-        }
-        balls() {
-            return [
-                this.Ball("0")
-            ];
-        }
-        Balls() {
-            const obj = new this.$.$mol_list();
-            obj.style = () => ({
-                "min-height": "10rem"
-            });
-            obj.attr = () => ({
-                "data-complete": this.complete()
-            });
-            obj.rows = () => this.balls();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_tube_view.prototype, "tube", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_tube_view.prototype, "click", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_tube_view.prototype, "Roof", null);
-    __decorate([
-        $mol_mem_key
-    ], $hype_ballsort_tube_view.prototype, "ball", null);
-    __decorate([
-        $mol_mem_key
-    ], $hype_ballsort_tube_view.prototype, "Ball", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_tube_view.prototype, "Balls", null);
-    $.$hype_ballsort_tube_view = $hype_ballsort_tube_view;
-})($ || ($ = {}));
-//hype/ballsort/tube/view/-view.tree/view.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -3444,7 +3386,7 @@ var $;
         $$.$hype_ballsort_tube_view = $hype_ballsort_tube_view;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//hype/ballsort/tube/view/view.view.ts
+
 ;
 "use strict";
 var $;
@@ -3495,7 +3437,7 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//hype/ballsort/tube/view/view.view.css.ts
+
 ;
 "use strict";
 var $;
@@ -3510,318 +3452,240 @@ var $;
     }
     $.$mol_plugin = $mol_plugin;
 })($ || ($ = {}));
-//mol/plugin/plugin.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $hype_ballsort_app extends $mol_view {
-        game() {
-            const obj = new this.$.$hype_ballsort_game();
-            return obj;
-        }
-        title() {
-            return "BALL SORT";
-        }
-        Start_page() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => [
-                this.Title(),
-                this.Start(),
-                this.Links()
-            ];
-            return obj;
-        }
-        Game_page() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => [
-                this.Control(),
-                this.Tubes(),
-                this.Links()
-            ];
-            return obj;
-        }
-        Finish_page() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => [
-                this.Control(),
-                this.Tubes(),
-                this.Links(),
-                this.Finish()
-            ];
-            return obj;
-        }
-        Title_begin() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                "BALL"
-            ];
-            return obj;
-        }
-        Title_end() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                "SORT"
-            ];
-            return obj;
-        }
-        Title() {
-            const obj = new this.$.$mol_view();
-            obj.dom_name = () => "h2";
-            obj.sub = () => [
-                this.Title_begin(),
-                this.Title_end()
-            ];
-            return obj;
-        }
-        start(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        Start() {
-            const obj = new this.$.$hype_ballsort_button();
-            obj.title = () => "Start game";
-            obj.click = (next) => this.start(next);
-            return obj;
-        }
-        Effector() {
-            const obj = new this.$.$hype_ballsort_link();
-            obj.title = () => "Effector";
-            obj.href = () => "https://github.com/sergeysova/ballsort/blob/master/src/pages/home/model.ts";
-            obj.target = () => "_blank";
-            return obj;
-        }
-        Reatom() {
-            const obj = new this.$.$hype_ballsort_link();
-            obj.title = () => "Reatom";
-            obj.href = () => "https://github.com/faustienf/ballsort/blob/main/src/app/model.ts";
-            obj.target = () => "_blank";
-            return obj;
-        }
-        Vue() {
-            const obj = new this.$.$hype_ballsort_link();
-            obj.title = () => "Vue";
-            obj.href = () => "https://github.com/Sdju/ballsort-example-vue/blob/main/src/components/TheGame.vue";
-            obj.target = () => "_blank";
-            return obj;
-        }
-        Mol() {
-            const obj = new this.$.$hype_ballsort_link();
-            obj.title = () => "$mol another version";
-            obj.href = () => "https://github.com/Lyumih/milis/blob/main/ballsort/board/board.ts";
-            obj.target = () => "_blank";
-            return obj;
-        }
-        Sources() {
-            const obj = new this.$.$hype_ballsort_link();
-            obj.title = () => "This Source Code";
-            obj.href = () => "https://github.com/PavelZubkov/ballsort/blob/master/game/game.ts";
-            obj.target = () => "_blank";
-            return obj;
-        }
-        Links() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.Effector(),
-                this.Reatom(),
-                this.Vue(),
-                this.Mol(),
-                this.Sources()
-            ];
-            return obj;
-        }
-        home(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        Home() {
-            const obj = new this.$.$hype_ballsort_button();
-            obj.title = () => "←";
-            obj.click = (next) => this.home(next);
-            return obj;
-        }
-        Restart() {
-            const obj = new this.$.$hype_ballsort_button();
-            obj.title = () => "Restart ";
-            obj.click = (next) => this.start(next);
-            return obj;
-        }
-        moves() {
-            return "Moves: {count}";
-        }
-        Moves() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.moves()
-            ];
-            return obj;
-        }
-        Control() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.Home(),
-                this.Restart(),
-                this.Moves()
-            ];
-            return obj;
-        }
-        tube(id) {
-            const obj = new this.$.$hype_ballsort_tube();
-            return obj;
-        }
-        tube_click(id, next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        tube_active(id) {
-            return false;
-        }
-        Tube(id) {
-            const obj = new this.$.$hype_ballsort_tube_view();
-            obj.tube = () => this.tube(id);
-            obj.click = (next) => this.tube_click(id, next);
-            obj.active = () => this.tube_active(id);
-            return obj;
-        }
-        tubes() {
-            return [
-                this.Tube("0")
-            ];
-        }
-        Tubes() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => this.tubes();
-            return obj;
-        }
-        Finish_title() {
-            const obj = new this.$.$mol_view();
-            obj.dom_name = () => "h1";
-            obj.sub = () => [
-                "You won!"
-            ];
-            return obj;
-        }
-        Finish_moves() {
-            const obj = new this.$.$mol_view();
-            obj.dom_name = () => "h2";
-            obj.sub = () => [
-                "In 16 moves"
-            ];
-            return obj;
-        }
-        Finish_home() {
-            const obj = new this.$.$hype_ballsort_button();
-            obj.title = () => "New game";
-            obj.click = (next) => this.home(next);
-            return obj;
-        }
-        Finish() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => [
-                this.Finish_title(),
-                this.Finish_moves(),
-                this.Finish_home()
-            ];
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "game", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Start_page", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Game_page", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Finish_page", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Title_begin", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Title_end", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Title", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "start", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Start", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Effector", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Reatom", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Vue", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Mol", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Sources", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Links", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "home", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Home", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Restart", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Moves", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Control", null);
-    __decorate([
-        $mol_mem_key
-    ], $hype_ballsort_app.prototype, "tube", null);
-    __decorate([
-        $mol_mem_key
-    ], $hype_ballsort_app.prototype, "tube_click", null);
-    __decorate([
-        $mol_mem_key
-    ], $hype_ballsort_app.prototype, "Tube", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Tubes", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Finish_title", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Finish_moves", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Finish_home", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_app.prototype, "Finish", null);
-    $.$hype_ballsort_app = $hype_ballsort_app;
-})($ || ($ = {}));
-//hype/ballsort/app/-view.tree/app.view.tree.ts
+	($.$hype_ballsort_app) = class $hype_ballsort_app extends ($.$mol_view) {
+		game(){
+			const obj = new this.$.$hype_ballsort_game();
+			return obj;
+		}
+		title(){
+			return "BALL SORT";
+		}
+		Start_page(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ([
+				(this.Title()), 
+				(this.Start()), 
+				(this.Links())
+			]);
+			return obj;
+		}
+		Game_page(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ([
+				(this.Control()), 
+				(this.Tubes()), 
+				(this.Links())
+			]);
+			return obj;
+		}
+		Finish_page(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ([
+				(this.Control()), 
+				(this.Tubes()), 
+				(this.Links()), 
+				(this.Finish())
+			]);
+			return obj;
+		}
+		Title_begin(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => (["BALL"]);
+			return obj;
+		}
+		Title_end(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => (["SORT"]);
+			return obj;
+		}
+		Title(){
+			const obj = new this.$.$mol_view();
+			(obj.dom_name) = () => ("h2");
+			(obj.sub) = () => ([(this.Title_begin()), (this.Title_end())]);
+			return obj;
+		}
+		start(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Start(){
+			const obj = new this.$.$hype_ballsort_button();
+			(obj.title) = () => ("Start game");
+			(obj.click) = (next) => ((this.start(next)));
+			return obj;
+		}
+		Effector(){
+			const obj = new this.$.$hype_ballsort_link();
+			(obj.title) = () => ("Effector");
+			(obj.href) = () => ("https://github.com/sergeysova/ballsort/blob/master/src/pages/home/model.ts");
+			(obj.target) = () => ("_blank");
+			return obj;
+		}
+		Reatom(){
+			const obj = new this.$.$hype_ballsort_link();
+			(obj.title) = () => ("Reatom");
+			(obj.href) = () => ("https://github.com/faustienf/ballsort/blob/main/src/app/model.ts");
+			(obj.target) = () => ("_blank");
+			return obj;
+		}
+		Vue(){
+			const obj = new this.$.$hype_ballsort_link();
+			(obj.title) = () => ("Vue");
+			(obj.href) = () => ("https://github.com/Sdju/ballsort-example-vue/blob/main/src/components/TheGame.vue");
+			(obj.target) = () => ("_blank");
+			return obj;
+		}
+		Mol(){
+			const obj = new this.$.$hype_ballsort_link();
+			(obj.title) = () => ("$mol another version");
+			(obj.href) = () => ("https://github.com/Lyumih/milis/blob/main/ballsort/board/board.ts");
+			(obj.target) = () => ("_blank");
+			return obj;
+		}
+		Sources(){
+			const obj = new this.$.$hype_ballsort_link();
+			(obj.title) = () => ("This Source Code");
+			(obj.href) = () => ("https://github.com/PavelZubkov/ballsort/blob/master/game/game.ts");
+			(obj.target) = () => ("_blank");
+			return obj;
+		}
+		Links(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([
+				(this.Effector()), 
+				(this.Reatom()), 
+				(this.Vue()), 
+				(this.Mol()), 
+				(this.Sources())
+			]);
+			return obj;
+		}
+		home(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Home(){
+			const obj = new this.$.$hype_ballsort_button();
+			(obj.title) = () => ("←");
+			(obj.click) = (next) => ((this.home(next)));
+			return obj;
+		}
+		Restart(){
+			const obj = new this.$.$hype_ballsort_button();
+			(obj.title) = () => ("Restart ");
+			(obj.click) = (next) => ((this.start(next)));
+			return obj;
+		}
+		moves(){
+			return "Moves: {count}";
+		}
+		Moves(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this.moves())]);
+			return obj;
+		}
+		Control(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([
+				(this.Home()), 
+				(this.Restart()), 
+				(this.Moves())
+			]);
+			return obj;
+		}
+		tube(id){
+			const obj = new this.$.$hype_ballsort_tube();
+			return obj;
+		}
+		tube_click(id, next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		tube_active(id){
+			return false;
+		}
+		Tube(id){
+			const obj = new this.$.$hype_ballsort_tube_view();
+			(obj.tube) = () => ((this.tube(id)));
+			(obj.click) = (next) => ((this.tube_click(id, next)));
+			(obj.active) = () => ((this.tube_active(id)));
+			return obj;
+		}
+		tubes(){
+			return [(this.Tube("0"))];
+		}
+		Tubes(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ((this.tubes()));
+			return obj;
+		}
+		Finish_title(){
+			const obj = new this.$.$mol_view();
+			(obj.dom_name) = () => ("h1");
+			(obj.sub) = () => (["You won!"]);
+			return obj;
+		}
+		Finish_moves(){
+			const obj = new this.$.$mol_view();
+			(obj.dom_name) = () => ("h2");
+			(obj.sub) = () => (["In 16 moves"]);
+			return obj;
+		}
+		Finish_home(){
+			const obj = new this.$.$hype_ballsort_button();
+			(obj.title) = () => ("New game");
+			(obj.click) = (next) => ((this.home(next)));
+			return obj;
+		}
+		Finish(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ([
+				(this.Finish_title()), 
+				(this.Finish_moves()), 
+				(this.Finish_home())
+			]);
+			return obj;
+		}
+	};
+	($mol_mem(($.$hype_ballsort_app.prototype), "game"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Start_page"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Game_page"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Finish_page"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Title_begin"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Title_end"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Title"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "start"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Start"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Effector"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Reatom"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Vue"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Mol"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Sources"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Links"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "home"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Home"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Restart"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Moves"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Control"));
+	($mol_mem_key(($.$hype_ballsort_app.prototype), "tube"));
+	($mol_mem_key(($.$hype_ballsort_app.prototype), "tube_click"));
+	($mol_mem_key(($.$hype_ballsort_app.prototype), "Tube"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Tubes"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Finish_title"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Finish_moves"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Finish_home"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Finish"));
+
+
 ;
 "use strict";
 var $;
 (function ($) {
     $.$mol_action = $mol_wire_method;
 })($ || ($ = {}));
-//mol/action/action.ts
+
 ;
 "use strict";
 var $;
@@ -3829,7 +3693,7 @@ var $;
     function $mol_offline() { }
     $.$mol_offline = $mol_offline;
 })($ || ($ = {}));
-//mol/offline/offline.ts
+
 ;
 "use strict";
 var $;
@@ -3910,7 +3774,7 @@ var $;
     $.$mol_offline_web = $mol_offline_web;
     $.$mol_offline = $mol_offline_web;
 })($ || ($ = {}));
-//mol/offline/offline.web.ts
+
 ;
 "use strict";
 var $;
@@ -3922,7 +3786,10 @@ var $;
         console.error(error);
     }
 })($ || ($ = {}));
-//mol/offline/install/install.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -3984,14 +3851,14 @@ var $;
         $$.$hype_ballsort_app = $hype_ballsort_app;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//hype/ballsort/app/app.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("hype/ballsort/app/app.view.css", "@media (orientation: portrait) and (max-height: 840px) {\n  :root {\n    font-size: 13px;\n  }\n}\n\n@media (orientation: portrait) and (max-height: 740px) {\n  :root {\n    font-size: 12px;\n  }\n}\n\n@media (orientation: landscape) and (max-width: 740px) {\n  :root {\n    font-size: 12px;\n  }\n}\n\n@media (orientation: portrait) and (max-height: 645px) {\n  :root {\n    font-size: 11px;\n  }\n}\n\n@media (orientation: portrait) and (max-height: 570px) {\n  :root {\n    font-size: 10px;\n  }\n}\n");
 })($ || ($ = {}));
-//hype/ballsort/app/-css/app.view.css.ts
+
 ;
 "use strict";
 var $;
@@ -4075,7 +3942,7 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//hype/ballsort/app/app.view.css.ts
+
 
 export default $
 //# sourceMappingURL=web.js.map

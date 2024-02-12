@@ -327,6 +327,10 @@ declare namespace $ {
         insert(value: $mol_tree2 | null, ...path: $mol_tree2_path): $mol_tree2;
         select(...path: $mol_tree2_path): $mol_tree2;
         filter(path: string[], value?: string): $mol_tree2;
+        hack_self<Context extends {
+            span?: $mol_span;
+            [key: string]: unknown;
+        } = {}>(belt: $mol_tree2_belt<Context>, context?: Context): readonly $mol_tree2[];
         hack<Context extends {
             span?: $mol_span;
             [key: string]: unknown;
@@ -614,7 +618,7 @@ declare namespace $ {
     type $mol_style_unit_angle = 'deg' | 'rad' | 'grad' | 'turn';
     type $mol_style_unit_time = 's' | 'ms';
     type $mol_style_unit_any = $mol_style_unit_length | $mol_style_unit_angle | $mol_style_unit_time;
-    type $mol_style_unit_str<Quanity extends $mol_style_unit_any> = `${number}${Quanity}`;
+    type $mol_style_unit_str<Quanity extends $mol_style_unit_any = $mol_style_unit_any> = `${number}${Quanity}`;
     class $mol_style_unit<Literal extends $mol_style_unit_any> extends $mol_decor<number> {
         readonly literal: Literal;
         constructor(value: number, literal: Literal);
@@ -739,9 +743,9 @@ declare namespace $ {
         all?: Common;
         animation?: {
             composition?: Single_animation_composition | Single_animation_composition[][] | Common;
-            delay?: $mol_style_unit<$mol_style_unit_time> | $mol_style_unit<$mol_style_unit_time>[][] | Common;
+            delay?: $mol_style_unit_str<$mol_style_unit_time> | $mol_style_unit_str<$mol_style_unit_time>[][] | Common;
             direction?: Single_animation_direction | Single_animation_direction[][] | Common;
-            duration?: $mol_style_unit<$mol_style_unit_time> | $mol_style_unit<$mol_style_unit_time>[][] | Common;
+            duration?: $mol_style_unit_str<$mol_style_unit_time> | $mol_style_unit_str<$mol_style_unit_time>[][] | Common;
             fillMode?: Single_animation_fill_mode | Single_animation_fill_mode[][] | Common;
             iterationCount?: Single_animation_iteration_count | Single_animation_iteration_count[][] | Common;
             name?: 'none' | string & {} | ('none' | string & {})[][] | Common;
@@ -967,21 +971,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_list extends $mol_view {
-        render_visible_only(): boolean;
-        render_over(): number;
-        sub(): readonly $mol_view[];
-        Empty(): $mol_view;
-        Gap_before(): $mol_view;
-        Gap_after(): $mol_view;
-        view_window(): readonly any[];
-        rows(): readonly $mol_view[];
-        gap_before(): number;
-        gap_after(): number;
-    }
-}
-
-declare namespace $ {
     function $mol_support_css_overflow_anchor(this: $): boolean;
 }
 
@@ -1012,6 +1001,42 @@ declare namespace $ {
     let $mol_mem_cached: typeof $mol_wire_probe;
 }
 
+declare namespace $ {
+    type $mol_type_enforce<Actual extends Expected, Expected> = Actual;
+}
+
+declare namespace $ {
+
+	type $mol_view__style__ATUSUQDG = $mol_type_enforce<
+		({ 
+			'paddingTop': ReturnType< $mol_list['gap_before'] >,
+		}) 
+		,
+		ReturnType< $mol_view['style'] >
+	>
+	type $mol_view__style__U59CD3WP = $mol_type_enforce<
+		({ 
+			'paddingTop': ReturnType< $mol_list['gap_after'] >,
+		}) 
+		,
+		ReturnType< $mol_view['style'] >
+	>
+	export class $mol_list extends $mol_view {
+		render_visible_only( ): boolean
+		render_over( ): number
+		sub( ): ReturnType< $mol_list['rows'] >
+		Empty( ): $mol_view
+		Gap_before( ): $mol_view
+		Gap_after( ): $mol_view
+		view_window( ): readonly(any)[]
+		rows( ): readonly($mol_view)[]
+		gap_before( ): number
+		gap_after( ): number
+	}
+	
+}
+
+//# sourceMappingURL=list.view.tree.d.ts.map
 declare namespace $.$$ {
     class $mol_list extends $.$mol_list {
         sub(): readonly $mol_view[];
@@ -1026,16 +1051,6 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-}
-
-declare namespace $ {
-    class $hype_ballsort_button extends $mol_view {
-        dom_name(): string;
-        sub(): readonly any[];
-        event(): Record<string, any>;
-        title(): string;
-        click(next?: any): any;
-    }
 }
 
 declare namespace $ {
@@ -1082,33 +1097,60 @@ declare namespace $ {
     function $mol_style_define<Component extends $mol_view, Config extends $mol_style_guard<Component, Config>>(Component: new () => Component, config: Config): HTMLStyleElement | null;
 }
 
+declare namespace $ {
+
+	export class $hype_ballsort_button extends $mol_view {
+		dom_name( ): string
+		sub( ): readonly(any)[]
+		event( ): ({ 
+			click( next?: ReturnType< $hype_ballsort_button['click'] > ): ReturnType< $hype_ballsort_button['click'] >,
+		}) 
+		title( ): string
+		click( next?: any ): any
+	}
+	
+}
+
+//# sourceMappingURL=button.view.tree.d.ts.map
 declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $hype_ballsort_link extends $mol_view {
-        dom_name(): string;
-        attr(): Record<string, any>;
-        sub(): readonly any[];
-        href(): string;
-        target(): string;
-        title(): string;
-    }
+
+	export class $hype_ballsort_link extends $mol_view {
+		dom_name( ): string
+		attr( ): ({ 
+			'href': ReturnType< $hype_ballsort_link['href'] >,
+			'target': ReturnType< $hype_ballsort_link['target'] >,
+		}) 
+		sub( ): readonly(any)[]
+		href( ): string
+		target( ): string
+		title( ): string
+	}
+	
 }
 
+//# sourceMappingURL=link.view.tree.d.ts.map
 declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $hype_ballsort_ball_view extends $mol_view {
-        ball(): $hype_ballsort_ball;
-        style(): Record<string, any>;
-        colors(): readonly any[];
-        color_main(): string;
-        color_light(): string;
-    }
+
+	export class $hype_ballsort_ball_view extends $mol_view {
+		ball( ): $hype_ballsort_ball
+		style( ): ({ 
+			'--main-color': ReturnType< $hype_ballsort_ball_view['color_main'] >,
+			'--light-color': ReturnType< $hype_ballsort_ball_view['color_light'] >,
+		}) 
+		colors( ): readonly(any)[]
+		color_main( ): string
+		color_light( ): string
+	}
+	
 }
 
+//# sourceMappingURL=view.view.tree.d.ts.map
 declare namespace $.$$ {
     class $hype_ballsort_ball_view extends $.$hype_ballsort_ball_view {
         color_index(): number;
@@ -1121,26 +1163,60 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $hype_ballsort_tube_view extends $mol_list {
-        tube(): $hype_ballsort_tube;
-        active(): boolean;
-        event(): Record<string, any>;
-        rows(): readonly any[];
-        click(next?: any): any;
-        roof(): any;
-        Roof(): $mol_view;
-        complete(): boolean;
-        ball(id: any): $hype_ballsort_ball;
-        Ball(id: any): $$.$hype_ballsort_ball_view;
-        balls(): readonly any[];
-        Balls(): $$.$mol_list;
-    }
+
+	type $mol_view__sub__WUVK4TXP = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	type $hype_ballsort_ball_view__ball__6J9OB99I = $mol_type_enforce<
+		ReturnType< $hype_ballsort_tube_view['ball'] >
+		,
+		ReturnType< $hype_ballsort_ball_view['ball'] >
+	>
+	type $mol_list__style__452OODX9 = $mol_type_enforce<
+		({ 
+			'min-height': string,
+		}) 
+		,
+		ReturnType< $mol_list['style'] >
+	>
+	type $mol_list__attr__BL8SRV8B = $mol_type_enforce<
+		({ 
+			'data-complete': ReturnType< $hype_ballsort_tube_view['complete'] >,
+		}) 
+		,
+		ReturnType< $mol_list['attr'] >
+	>
+	type $mol_list__rows__4UZVOLE3 = $mol_type_enforce<
+		ReturnType< $hype_ballsort_tube_view['balls'] >
+		,
+		ReturnType< $mol_list['rows'] >
+	>
+	export class $hype_ballsort_tube_view extends $mol_list {
+		tube( ): $hype_ballsort_tube
+		active( ): boolean
+		event( ): ({ 
+			click( next?: ReturnType< $hype_ballsort_tube_view['click'] > ): ReturnType< $hype_ballsort_tube_view['click'] >,
+		}) 
+		rows( ): readonly(any)[]
+		click( next?: any ): any
+		roof( ): any
+		Roof( ): $mol_view
+		complete( ): boolean
+		ball( id: any): $hype_ballsort_ball
+		Ball( id: any): $hype_ballsort_ball_view
+		balls( ): readonly(any)[]
+		Balls( ): $mol_list
+	}
+	
 }
 
+//# sourceMappingURL=view.view.tree.d.ts.map
 declare namespace $.$$ {
     class $hype_ballsort_tube_view extends $.$hype_ballsort_tube_view {
-        roof(): $hype_ballsort_ball_view | null;
-        balls(): $hype_ballsort_ball_view[];
+        roof(): $.$hype_ballsort_ball_view | null;
+        balls(): $.$hype_ballsort_ball_view[];
         ball(index: number): $hype_ballsort_ball;
         complete(): boolean;
     }
@@ -1157,43 +1233,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $hype_ballsort_app extends $mol_view {
-        game(): $hype_ballsort_game;
-        title(): string;
-        Start_page(): $$.$mol_list;
-        Game_page(): $$.$mol_list;
-        Finish_page(): $$.$mol_list;
-        Title_begin(): $mol_view;
-        Title_end(): $mol_view;
-        Title(): $mol_view;
-        start(next?: any): any;
-        Start(): $hype_ballsort_button;
-        Effector(): $hype_ballsort_link;
-        Reatom(): $hype_ballsort_link;
-        Vue(): $hype_ballsort_link;
-        Mol(): $hype_ballsort_link;
-        Sources(): $hype_ballsort_link;
-        Links(): $mol_view;
-        home(next?: any): any;
-        Home(): $hype_ballsort_button;
-        Restart(): $hype_ballsort_button;
-        moves(): string;
-        Moves(): $mol_view;
-        Control(): $mol_view;
-        tube(id: any): $hype_ballsort_tube;
-        tube_click(id: any, next?: any): any;
-        tube_active(id: any): boolean;
-        Tube(id: any): $$.$hype_ballsort_tube_view;
-        tubes(): readonly any[];
-        Tubes(): $mol_view;
-        Finish_title(): $mol_view;
-        Finish_moves(): $mol_view;
-        Finish_home(): $hype_ballsort_button;
-        Finish(): $$.$mol_list;
-    }
-}
-
-declare namespace $ {
     let $mol_action: typeof $mol_wire_method;
 }
 
@@ -1204,11 +1243,261 @@ declare namespace $ {
 declare namespace $ {
 }
 
+declare namespace $ {
+
+	type $mol_list__rows__QC78K9BP = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_list['rows'] >
+	>
+	type $mol_list__rows__PJW5R4QN = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_list['rows'] >
+	>
+	type $mol_list__rows__5A2XVQRT = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_list['rows'] >
+	>
+	type $mol_view__sub__NMNR9ZVM = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	type $mol_view__sub__0H26NE06 = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	type $mol_view__dom_name__ZTQHB5QG = $mol_type_enforce<
+		string
+		,
+		ReturnType< $mol_view['dom_name'] >
+	>
+	type $mol_view__sub__XZVES1ES = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	type $hype_ballsort_button__title__GL4HBVHW = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_button['title'] >
+	>
+	type $hype_ballsort_button__click__TNVVFC9S = $mol_type_enforce<
+		ReturnType< $hype_ballsort_app['start'] >
+		,
+		ReturnType< $hype_ballsort_button['click'] >
+	>
+	type $hype_ballsort_link__title__N2FN9STX = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['title'] >
+	>
+	type $hype_ballsort_link__href__XYINHTYL = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['href'] >
+	>
+	type $hype_ballsort_link__target__73L29YBG = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['target'] >
+	>
+	type $hype_ballsort_link__title__VXOVYM5H = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['title'] >
+	>
+	type $hype_ballsort_link__href__CSIIGEOY = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['href'] >
+	>
+	type $hype_ballsort_link__target__WOJCN420 = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['target'] >
+	>
+	type $hype_ballsort_link__title__LXAWS1Q6 = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['title'] >
+	>
+	type $hype_ballsort_link__href__CEC6NQZK = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['href'] >
+	>
+	type $hype_ballsort_link__target__YNU2MZCA = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['target'] >
+	>
+	type $hype_ballsort_link__title__MTDMUBN7 = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['title'] >
+	>
+	type $hype_ballsort_link__href__1K2DFE6C = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['href'] >
+	>
+	type $hype_ballsort_link__target__7SM2AXAI = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['target'] >
+	>
+	type $hype_ballsort_link__title__8R407IOQ = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['title'] >
+	>
+	type $hype_ballsort_link__href__4V49EQYY = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['href'] >
+	>
+	type $hype_ballsort_link__target__5NUB03IW = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_link['target'] >
+	>
+	type $mol_view__sub__30479FGJ = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	type $hype_ballsort_button__title__XLD04FP1 = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_button['title'] >
+	>
+	type $hype_ballsort_button__click__I6Y8NN1L = $mol_type_enforce<
+		ReturnType< $hype_ballsort_app['home'] >
+		,
+		ReturnType< $hype_ballsort_button['click'] >
+	>
+	type $hype_ballsort_button__title__BW806VKC = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_button['title'] >
+	>
+	type $hype_ballsort_button__click__FIGAUPAE = $mol_type_enforce<
+		ReturnType< $hype_ballsort_app['start'] >
+		,
+		ReturnType< $hype_ballsort_button['click'] >
+	>
+	type $mol_view__sub__Q4T9PRCE = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	type $mol_view__sub__AVZ5OMZ7 = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	type $hype_ballsort_tube_view__tube__H3ZRQ4CT = $mol_type_enforce<
+		ReturnType< $hype_ballsort_app['tube'] >
+		,
+		ReturnType< $hype_ballsort_tube_view['tube'] >
+	>
+	type $hype_ballsort_tube_view__click__UBJJPT93 = $mol_type_enforce<
+		ReturnType< $hype_ballsort_app['tube_click'] >
+		,
+		ReturnType< $hype_ballsort_tube_view['click'] >
+	>
+	type $hype_ballsort_tube_view__active__KEX43OTR = $mol_type_enforce<
+		ReturnType< $hype_ballsort_app['tube_active'] >
+		,
+		ReturnType< $hype_ballsort_tube_view['active'] >
+	>
+	type $mol_view__sub__FXD3Y2IV = $mol_type_enforce<
+		ReturnType< $hype_ballsort_app['tubes'] >
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	type $mol_view__dom_name__CDB024U7 = $mol_type_enforce<
+		string
+		,
+		ReturnType< $mol_view['dom_name'] >
+	>
+	type $mol_view__sub__KOFV417O = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	type $mol_view__dom_name__QH5JJOBT = $mol_type_enforce<
+		string
+		,
+		ReturnType< $mol_view['dom_name'] >
+	>
+	type $mol_view__sub__1W4ZTRXN = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	type $hype_ballsort_button__title__0TY1BA6N = $mol_type_enforce<
+		string
+		,
+		ReturnType< $hype_ballsort_button['title'] >
+	>
+	type $hype_ballsort_button__click__6IQQRDQG = $mol_type_enforce<
+		ReturnType< $hype_ballsort_app['home'] >
+		,
+		ReturnType< $hype_ballsort_button['click'] >
+	>
+	type $mol_list__rows__L9VDFZ37 = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_list['rows'] >
+	>
+	export class $hype_ballsort_app extends $mol_view {
+		game( ): $hype_ballsort_game
+		title( ): string
+		Start_page( ): $mol_list
+		Game_page( ): $mol_list
+		Finish_page( ): $mol_list
+		Title_begin( ): $mol_view
+		Title_end( ): $mol_view
+		Title( ): $mol_view
+		start( next?: any ): any
+		Start( ): $hype_ballsort_button
+		Effector( ): $hype_ballsort_link
+		Reatom( ): $hype_ballsort_link
+		Vue( ): $hype_ballsort_link
+		Mol( ): $hype_ballsort_link
+		Sources( ): $hype_ballsort_link
+		Links( ): $mol_view
+		home( next?: any ): any
+		Home( ): $hype_ballsort_button
+		Restart( ): $hype_ballsort_button
+		moves( ): string
+		Moves( ): $mol_view
+		Control( ): $mol_view
+		tube( id: any): $hype_ballsort_tube
+		tube_click( id: any, next?: any ): any
+		tube_active( id: any): boolean
+		Tube( id: any): $hype_ballsort_tube_view
+		tubes( ): readonly(any)[]
+		Tubes( ): $mol_view
+		Finish_title( ): $mol_view
+		Finish_moves( ): $mol_view
+		Finish_home( ): $hype_ballsort_button
+		Finish( ): $mol_list
+	}
+	
+}
+
+//# sourceMappingURL=app.view.tree.d.ts.map
 declare namespace $.$$ {
     class $hype_ballsort_app extends $.$hype_ballsort_app {
         game(next?: $hype_ballsort_game | null): $hype_ballsort_game;
-        sub(): $mol_list[];
-        tubes(): $hype_ballsort_tube_view[];
+        sub(): $.$mol_list[];
+        tubes(): $.$hype_ballsort_tube_view[];
         tube(index: number): $hype_ballsort_tube;
         moves(): string;
         home(): void;
@@ -1225,3 +1514,4 @@ declare namespace $.$$ {
 }
 
 export = $;
+//# sourceMappingURL=node.d.ts.map
