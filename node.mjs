@@ -3083,6 +3083,222 @@ var $;
 })($ || ($ = {}));
 
 ;
+	($.$hype_ballsort_button) = class $hype_ballsort_button extends ($.$mol_view) {
+		title(){
+			return "";
+		}
+		click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		dom_name(){
+			return "button";
+		}
+		sub(){
+			return [(this.title())];
+		}
+		event(){
+			return {"click": (next) => (this.click(next))};
+		}
+	};
+	($mol_mem(($.$hype_ballsort_button.prototype), "click"));
+
+
+;
+"use strict";
+
+;
+"use strict";
+
+;
+"use strict";
+
+;
+"use strict";
+
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_style_sheet(Component, config0) {
+        let rules = [];
+        const block = $mol_dom_qname($mol_ambient({}).$mol_func_name(Component));
+        const kebab = (name) => name.replace(/[A-Z]/g, letter => '-' + letter.toLowerCase());
+        const make_class = (prefix, path, config) => {
+            const props = [];
+            const selector = (prefix, path) => {
+                if (path.length === 0)
+                    return prefix || `[${block}]`;
+                let res = `[${block}_${path.join('_')}]`;
+                if (prefix)
+                    res = prefix + ' :where(' + res + ')';
+                return res;
+            };
+            for (const key of Object.keys(config).reverse()) {
+                if (/^(--)?[a-z]/.test(key)) {
+                    const addProp = (keys, val) => {
+                        if (Array.isArray(val)) {
+                            if (val[0] && [Array, Object].includes(val[0].constructor)) {
+                                val = val.map(v => {
+                                    return Object.entries(v).map(([n, a]) => {
+                                        if (a === true)
+                                            return kebab(n);
+                                        if (a === false)
+                                            return null;
+                                        return String(a);
+                                    }).filter(Boolean).join(' ');
+                                }).join(',');
+                            }
+                            else {
+                                val = val.join(' ');
+                            }
+                            props.push(`\t${keys.join('-')}: ${val};\n`);
+                        }
+                        else if (val.constructor === Object) {
+                            for (let suffix in val) {
+                                addProp([...keys, kebab(suffix)], val[suffix]);
+                            }
+                        }
+                        else {
+                            props.push(`\t${keys.join('-')}: ${val};\n`);
+                        }
+                    };
+                    addProp([kebab(key)], config[key]);
+                }
+                else if (/^[A-Z]/.test(key)) {
+                    make_class(prefix, [...path, key.toLowerCase()], config[key]);
+                }
+                else if (key[0] === '$') {
+                    make_class(selector(prefix, path) + ' :where([' + $mol_dom_qname(key) + '])', [], config[key]);
+                }
+                else if (key === '>') {
+                    const types = config[key];
+                    for (let type in types) {
+                        make_class(selector(prefix, path) + ' > :where([' + $mol_dom_qname(type) + '])', [], types[type]);
+                    }
+                }
+                else if (key === '@') {
+                    const attrs = config[key];
+                    for (let name in attrs) {
+                        for (let val in attrs[name]) {
+                            make_class(selector(prefix, path) + ':where([' + name + '=' + JSON.stringify(val) + '])', [], attrs[name][val]);
+                        }
+                    }
+                }
+                else if (key === '@media') {
+                    const media = config[key];
+                    for (let query in media) {
+                        rules.push('}\n');
+                        make_class(prefix, path, media[query]);
+                        rules.push(`${key} ${query} {\n`);
+                    }
+                }
+                else if (key[0] === '[' && key[key.length - 1] === ']') {
+                    const attr = key.slice(1, -1);
+                    const vals = config[key];
+                    for (let val in vals) {
+                        make_class(selector(prefix, path) + ':where([' + attr + '=' + JSON.stringify(val) + '])', [], vals[val]);
+                    }
+                }
+                else {
+                    make_class(selector(prefix, path) + key, [], config[key]);
+                }
+            }
+            if (props.length) {
+                rules.push(`${selector(prefix, path)} {\n${props.reverse().join('')}}\n`);
+            }
+        };
+        make_class('', [], config0);
+        return rules.reverse().join('');
+    }
+    $.$mol_style_sheet = $mol_style_sheet;
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_style_define(Component, config) {
+        return $mol_style_attach(Component.name, $mol_style_sheet(Component, config));
+    }
+    $.$mol_style_define = $mol_style_define;
+})($ || ($ = {}));
+
+;
+"use strict";
+
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        $mol_style_define($hype_ballsort_button, {
+            width: 'fit-content',
+            backgroundColor: 'white',
+            color: 'black',
+            padding: ['0.6rem', '1rem'],
+            fontSize: '1.3rem',
+            margin: [0, '0.2rem'],
+            border: {
+                width: '2px',
+                style: 'solid',
+                color: 'lightgray',
+            },
+            cursor: 'pointer',
+            position: 'relative',
+            ':hover': {
+                backgroundColor: '#f1f1f1',
+            },
+            ':focus': {
+                outline: 'none',
+                boxShadow: '0 0 0 4px lightblue',
+                borderColor: 'lightblue',
+            },
+        });
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+
+;
+	($.$hype_ballsort_link) = class $hype_ballsort_link extends ($.$mol_view) {
+		href(){
+			return "";
+		}
+		target(){
+			return "_self";
+		}
+		title(){
+			return "";
+		}
+		dom_name(){
+			return "a";
+		}
+		attr(){
+			return {"href": (this.href()), "target": (this.target())};
+		}
+		sub(){
+			return [(this.title())];
+		}
+	};
+
+
+;
+"use strict";
+
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        $mol_style_define($hype_ballsort_link, {
+            color: 'lightgray',
+            padding: ['0.25rem', '1rem'],
+        });
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+
+;
 "use strict";
 var $;
 (function ($) {
@@ -3133,112 +3349,16 @@ var $;
 })($ || ($ = {}));
 
 ;
-"use strict";
-var $;
-(function ($) {
-    function $mol_array_shuffle(array) {
-        const res = array.slice();
-        for (let index = res.length - 1; index > 0; index--) {
-            const index_swap = Math.floor(Math.random() * (index + 1));
-            const temp = res[index];
-            res[index] = res[index_swap];
-            res[index_swap] = temp;
-        }
-        return res;
-    }
-    $.$mol_array_shuffle = $mol_array_shuffle;
-})($ || ($ = {}));
-
-;
-"use strict";
-var $;
-(function ($) {
-    class $hype_ballsort_game extends $mol_object {
-        color_count() { return 4; }
-        tube_size() { return 4; }
-        tube_empty_count() { return 2; }
-        tube_count() { return this.color_count() + this.tube_empty_count(); }
-        ball_count() { return this.tube_size() * this.color_count(); }
-        Ball(index) {
-            return new $hype_ballsort_ball;
-        }
-        balls() {
-            return Array.from({ length: this.ball_count() }).map((_, index) => {
-                const obj = this.Ball(index);
-                obj.color(index % this.tube_size());
-                return obj;
-            });
-        }
-        Tube(index) {
-            const obj = new $hype_ballsort_tube;
-            obj.size = () => this.tube_size();
-            return obj;
-        }
-        tubes() {
-            const balls = $mol_array_shuffle(this.balls());
-            const size = this.tube_size();
-            return Array.from({ length: this.tube_count() }).map((_, index) => {
-                const obj = this.Tube(index);
-                const list = index < this.color_count() ? balls.slice(index * size, index * size + size) : [];
-                obj.balls(list);
-                return obj;
-            });
-        }
-        moves(next) {
-            return next ?? 0;
-        }
-        tube_active(next) {
-            if (next?.balls().length === 0)
-                return null;
-            if (next?.complete())
-                return null;
-            return next ?? null;
-        }
-        ball_move(to) {
-            const from = this.tube_active();
-            if (to === from || !from)
-                return this.tube_active(null);
-            if (to.balls().length && to.balls().at(-1)?.color() !== from?.balls().at(-1)?.color())
-                return;
-            const ball = from.take();
-            to.put(ball);
-            this.moves(this.moves() + 1);
-            this.tube_active(null);
-        }
-        tube_click(tube) {
-            const tube_active = this.tube_active();
-            tube_active === null ? this.tube_active(tube) : this.ball_move(tube);
-        }
-        finished() {
-            return this.tubes().every(tube => tube.complete() || tube.balls().length === 0);
-        }
-    }
-    __decorate([
-        $mol_mem_key
-    ], $hype_ballsort_game.prototype, "Ball", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_game.prototype, "balls", null);
-    __decorate([
-        $mol_mem_key
-    ], $hype_ballsort_game.prototype, "Tube", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_game.prototype, "tubes", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_game.prototype, "moves", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_game.prototype, "tube_active", null);
-    __decorate([
-        $mol_mem
-    ], $hype_ballsort_game.prototype, "finished", null);
-    $.$hype_ballsort_game = $hype_ballsort_game;
-})($ || ($ = {}));
-
-;
 	($.$mol_list) = class $mol_list extends ($.$mol_view) {
+		rows(){
+			return [];
+		}
+		gap_before(){
+			return 0;
+		}
+		gap_after(){
+			return 0;
+		}
 		render_visible_only(){
 			return true;
 		}
@@ -3264,15 +3384,6 @@ var $;
 		}
 		view_window(){
 			return [0, 0];
-		}
-		rows(){
-			return [];
-		}
-		gap_before(){
-			return 0;
-		}
-		gap_after(){
-			return 0;
 		}
 	};
 	($mol_mem(($.$mol_list.prototype), "Empty"));
@@ -3503,223 +3614,13 @@ var $;
 })($ || ($ = {}));
 
 ;
-	($.$hype_ballsort_button) = class $hype_ballsort_button extends ($.$mol_view) {
-		dom_name(){
-			return "button";
-		}
-		sub(){
-			return [(this.title())];
-		}
-		event(){
-			return {"click": (next) => (this.click(next))};
-		}
-		title(){
-			return "";
-		}
-		click(next){
-			if(next !== undefined) return next;
-			return null;
-		}
-	};
-	($mol_mem(($.$hype_ballsort_button.prototype), "click"));
-
-
-;
-"use strict";
-
-;
-"use strict";
-
-;
-"use strict";
-
-;
-"use strict";
-
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_style_sheet(Component, config0) {
-        let rules = [];
-        const block = $mol_dom_qname($mol_ambient({}).$mol_func_name(Component));
-        const kebab = (name) => name.replace(/[A-Z]/g, letter => '-' + letter.toLowerCase());
-        const make_class = (prefix, path, config) => {
-            const props = [];
-            const selector = (prefix, path) => {
-                if (path.length === 0)
-                    return prefix || `[${block}]`;
-                let res = `[${block}_${path.join('_')}]`;
-                if (prefix)
-                    res = prefix + ' :where(' + res + ')';
-                return res;
-            };
-            for (const key of Object.keys(config).reverse()) {
-                if (/^(--)?[a-z]/.test(key)) {
-                    const addProp = (keys, val) => {
-                        if (Array.isArray(val)) {
-                            if (val[0] && [Array, Object].includes(val[0].constructor)) {
-                                val = val.map(v => {
-                                    return Object.entries(v).map(([n, a]) => {
-                                        if (a === true)
-                                            return kebab(n);
-                                        if (a === false)
-                                            return null;
-                                        return String(a);
-                                    }).filter(Boolean).join(' ');
-                                }).join(',');
-                            }
-                            else {
-                                val = val.join(' ');
-                            }
-                            props.push(`\t${keys.join('-')}: ${val};\n`);
-                        }
-                        else if (val.constructor === Object) {
-                            for (let suffix in val) {
-                                addProp([...keys, kebab(suffix)], val[suffix]);
-                            }
-                        }
-                        else {
-                            props.push(`\t${keys.join('-')}: ${val};\n`);
-                        }
-                    };
-                    addProp([kebab(key)], config[key]);
-                }
-                else if (/^[A-Z]/.test(key)) {
-                    make_class(prefix, [...path, key.toLowerCase()], config[key]);
-                }
-                else if (key[0] === '$') {
-                    make_class(selector(prefix, path) + ' :where([' + $mol_dom_qname(key) + '])', [], config[key]);
-                }
-                else if (key === '>') {
-                    const types = config[key];
-                    for (let type in types) {
-                        make_class(selector(prefix, path) + ' > :where([' + $mol_dom_qname(type) + '])', [], types[type]);
-                    }
-                }
-                else if (key === '@') {
-                    const attrs = config[key];
-                    for (let name in attrs) {
-                        for (let val in attrs[name]) {
-                            make_class(selector(prefix, path) + ':where([' + name + '=' + JSON.stringify(val) + '])', [], attrs[name][val]);
-                        }
-                    }
-                }
-                else if (key === '@media') {
-                    const media = config[key];
-                    for (let query in media) {
-                        rules.push('}\n');
-                        make_class(prefix, path, media[query]);
-                        rules.push(`${key} ${query} {\n`);
-                    }
-                }
-                else if (key[0] === '[' && key[key.length - 1] === ']') {
-                    const attr = key.slice(1, -1);
-                    const vals = config[key];
-                    for (let val in vals) {
-                        make_class(selector(prefix, path) + ':where([' + attr + '=' + JSON.stringify(val) + '])', [], vals[val]);
-                    }
-                }
-                else {
-                    make_class(selector(prefix, path) + key, [], config[key]);
-                }
-            }
-            if (props.length) {
-                rules.push(`${selector(prefix, path)} {\n${props.reverse().join('')}}\n`);
-            }
-        };
-        make_class('', [], config0);
-        return rules.reverse().join('');
-    }
-    $.$mol_style_sheet = $mol_style_sheet;
-})($ || ($ = {}));
-
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_style_define(Component, config) {
-        return $mol_style_attach(Component.name, $mol_style_sheet(Component, config));
-    }
-    $.$mol_style_define = $mol_style_define;
-})($ || ($ = {}));
-
-;
-"use strict";
-
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        $mol_style_define($hype_ballsort_button, {
-            width: 'fit-content',
-            backgroundColor: 'white',
-            color: 'black',
-            padding: ['0.6rem', '1rem'],
-            fontSize: '1.3rem',
-            margin: [0, '0.2rem'],
-            border: {
-                width: '2px',
-                style: 'solid',
-                color: 'lightgray',
-            },
-            cursor: 'pointer',
-            position: 'relative',
-            ':hover': {
-                backgroundColor: '#f1f1f1',
-            },
-            ':focus': {
-                outline: 'none',
-                boxShadow: '0 0 0 4px lightblue',
-                borderColor: 'lightblue',
-            },
-        });
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-
-;
-	($.$hype_ballsort_link) = class $hype_ballsort_link extends ($.$mol_view) {
-		dom_name(){
-			return "a";
-		}
-		attr(){
-			return {"href": (this.href()), "target": (this.target())};
-		}
-		sub(){
-			return [(this.title())];
-		}
-		href(){
-			return "";
-		}
-		target(){
-			return "_self";
-		}
-		title(){
-			return "";
-		}
-	};
-
-
-;
-"use strict";
-
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        $mol_style_define($hype_ballsort_link, {
-            color: 'lightgray',
-            padding: ['0.25rem', '1rem'],
-        });
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-
-;
 	($.$hype_ballsort_ball_view) = class $hype_ballsort_ball_view extends ($.$mol_view) {
+		color_main(){
+			return "";
+		}
+		color_light(){
+			return "";
+		}
 		ball(){
 			const obj = new this.$.$hype_ballsort_ball();
 			return obj;
@@ -3754,12 +3655,6 @@ var $;
 				"#343434", 
 				"#B1B1B1"
 			];
-		}
-		color_main(){
-			return "";
-		}
-		color_light(){
-			return "";
 		}
 	};
 	($mol_mem(($.$hype_ballsort_ball_view.prototype), "ball"));
@@ -3814,19 +3709,6 @@ var $;
 
 ;
 	($.$hype_ballsort_tube_view) = class $hype_ballsort_tube_view extends ($.$mol_list) {
-		tube(){
-			const obj = new this.$.$hype_ballsort_tube();
-			return obj;
-		}
-		active(){
-			return false;
-		}
-		event(){
-			return {"click": (next) => (this.click(next))};
-		}
-		rows(){
-			return [(this.Roof()), (this.Balls())];
-		}
 		click(next){
 			if(next !== undefined) return next;
 			return null;
@@ -3861,13 +3743,26 @@ var $;
 			(obj.rows) = () => ((this.balls()));
 			return obj;
 		}
+		tube(){
+			const obj = new this.$.$hype_ballsort_tube();
+			return obj;
+		}
+		active(){
+			return false;
+		}
+		event(){
+			return {"click": (next) => (this.click(next))};
+		}
+		rows(){
+			return [(this.Roof()), (this.Balls())];
+		}
 	};
-	($mol_mem(($.$hype_ballsort_tube_view.prototype), "tube"));
 	($mol_mem(($.$hype_ballsort_tube_view.prototype), "click"));
 	($mol_mem(($.$hype_ballsort_tube_view.prototype), "Roof"));
 	($mol_mem_key(($.$hype_ballsort_tube_view.prototype), "ball"));
 	($mol_mem_key(($.$hype_ballsort_tube_view.prototype), "Ball"));
 	($mol_mem(($.$hype_ballsort_tube_view.prototype), "Balls"));
+	($mol_mem(($.$hype_ballsort_tube_view.prototype), "tube"));
 
 
 ;
@@ -3959,6 +3854,111 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    function $mol_array_shuffle(array) {
+        const res = array.slice();
+        for (let index = res.length - 1; index > 0; index--) {
+            const index_swap = Math.floor(Math.random() * (index + 1));
+            const temp = res[index];
+            res[index] = res[index_swap];
+            res[index_swap] = temp;
+        }
+        return res;
+    }
+    $.$mol_array_shuffle = $mol_array_shuffle;
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
+    class $hype_ballsort_game extends $mol_object {
+        color_count() { return 4; }
+        tube_size() { return 4; }
+        tube_empty_count() { return 2; }
+        tube_count() { return this.color_count() + this.tube_empty_count(); }
+        ball_count() { return this.tube_size() * this.color_count(); }
+        Ball(index) {
+            return new $hype_ballsort_ball;
+        }
+        balls() {
+            return Array.from({ length: this.ball_count() }).map((_, index) => {
+                const obj = this.Ball(index);
+                obj.color(index % this.tube_size());
+                return obj;
+            });
+        }
+        Tube(index) {
+            const obj = new $hype_ballsort_tube;
+            obj.size = () => this.tube_size();
+            return obj;
+        }
+        tubes() {
+            const balls = $mol_array_shuffle(this.balls());
+            const size = this.tube_size();
+            return Array.from({ length: this.tube_count() }).map((_, index) => {
+                const obj = this.Tube(index);
+                const list = index < this.color_count() ? balls.slice(index * size, index * size + size) : [];
+                obj.balls(list);
+                return obj;
+            });
+        }
+        moves(next) {
+            return next ?? 0;
+        }
+        tube_active(next) {
+            if (next?.balls().length === 0)
+                return null;
+            if (next?.complete())
+                return null;
+            return next ?? null;
+        }
+        ball_move(to) {
+            const from = this.tube_active();
+            if (to === from || !from)
+                return this.tube_active(null);
+            if (to.balls().length && to.balls().at(-1)?.color() !== from?.balls().at(-1)?.color())
+                return;
+            const ball = from.take();
+            to.put(ball);
+            this.moves(this.moves() + 1);
+            this.tube_active(null);
+        }
+        tube_click(tube) {
+            const tube_active = this.tube_active();
+            tube_active === null ? this.tube_active(tube) : this.ball_move(tube);
+        }
+        finished() {
+            return this.tubes().every(tube => tube.complete() || tube.balls().length === 0);
+        }
+    }
+    __decorate([
+        $mol_mem_key
+    ], $hype_ballsort_game.prototype, "Ball", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_game.prototype, "balls", null);
+    __decorate([
+        $mol_mem_key
+    ], $hype_ballsort_game.prototype, "Tube", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_game.prototype, "tubes", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_game.prototype, "moves", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_game.prototype, "tube_active", null);
+    __decorate([
+        $mol_mem
+    ], $hype_ballsort_game.prototype, "finished", null);
+    $.$hype_ballsort_game = $hype_ballsort_game;
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_plugin extends $mol_view {
         dom_node_external(next) {
             return next ?? $mol_owning_get(this).host.dom_node();
@@ -3972,41 +3972,6 @@ var $;
 
 ;
 	($.$hype_ballsort_app) = class $hype_ballsort_app extends ($.$mol_view) {
-		game(){
-			const obj = new this.$.$hype_ballsort_game();
-			return obj;
-		}
-		title(){
-			return "BALL SORT";
-		}
-		Start_page(){
-			const obj = new this.$.$mol_list();
-			(obj.rows) = () => ([
-				(this.Title()), 
-				(this.Start()), 
-				(this.Links())
-			]);
-			return obj;
-		}
-		Game_page(){
-			const obj = new this.$.$mol_list();
-			(obj.rows) = () => ([
-				(this.Control()), 
-				(this.Tubes()), 
-				(this.Links())
-			]);
-			return obj;
-		}
-		Finish_page(){
-			const obj = new this.$.$mol_list();
-			(obj.rows) = () => ([
-				(this.Control()), 
-				(this.Tubes()), 
-				(this.Links()), 
-				(this.Finish())
-			]);
-			return obj;
-		}
 		Title_begin(){
 			const obj = new this.$.$mol_view();
 			(obj.sub) = () => (["BALL"]);
@@ -4165,11 +4130,42 @@ var $;
 			]);
 			return obj;
 		}
+		game(){
+			const obj = new this.$.$hype_ballsort_game();
+			return obj;
+		}
+		title(){
+			return "BALL SORT";
+		}
+		Start_page(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ([
+				(this.Title()), 
+				(this.Start()), 
+				(this.Links())
+			]);
+			return obj;
+		}
+		Game_page(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ([
+				(this.Control()), 
+				(this.Tubes()), 
+				(this.Links())
+			]);
+			return obj;
+		}
+		Finish_page(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ([
+				(this.Control()), 
+				(this.Tubes()), 
+				(this.Links()), 
+				(this.Finish())
+			]);
+			return obj;
+		}
 	};
-	($mol_mem(($.$hype_ballsort_app.prototype), "game"));
-	($mol_mem(($.$hype_ballsort_app.prototype), "Start_page"));
-	($mol_mem(($.$hype_ballsort_app.prototype), "Game_page"));
-	($mol_mem(($.$hype_ballsort_app.prototype), "Finish_page"));
 	($mol_mem(($.$hype_ballsort_app.prototype), "Title_begin"));
 	($mol_mem(($.$hype_ballsort_app.prototype), "Title_end"));
 	($mol_mem(($.$hype_ballsort_app.prototype), "Title"));
@@ -4194,6 +4190,10 @@ var $;
 	($mol_mem(($.$hype_ballsort_app.prototype), "Finish_moves"));
 	($mol_mem(($.$hype_ballsort_app.prototype), "Finish_home"));
 	($mol_mem(($.$hype_ballsort_app.prototype), "Finish"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "game"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Start_page"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Game_page"));
+	($mol_mem(($.$hype_ballsort_app.prototype), "Finish_page"));
 
 
 ;
