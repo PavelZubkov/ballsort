@@ -2580,10 +2580,10 @@ var $;
 			return "button";
 		}
 		sub(){
-			return [(this?.title())];
+			return [(this.title())];
 		}
 		event(){
-			return {"click": (next) => (this?.click(next))};
+			return {"click": (next) => (this.click(next))};
 		}
 	};
 	($mol_mem(($.$hype_ballsort_button.prototype), "click"));
@@ -2759,10 +2759,10 @@ var $;
 			return "a";
 		}
 		attr(){
-			return {"href": (this?.href()), "target": (this?.target())};
+			return {"href": (this.href()), "target": (this.target())};
 		}
 		sub(){
-			return [(this?.title())];
+			return [(this.title())];
 		}
 	};
 
@@ -2851,7 +2851,7 @@ var $;
 			return 0;
 		}
 		sub(){
-			return (this?.rows());
+			return (this.rows());
 		}
 		Empty(){
 			const obj = new this.$.$mol_view();
@@ -2859,12 +2859,12 @@ var $;
 		}
 		Gap_before(){
 			const obj = new this.$.$mol_view();
-			(obj.style) = () => ({"paddingTop": (this?.gap_before())});
+			(obj.style) = () => ({"paddingTop": (this.gap_before())});
 			return obj;
 		}
 		Gap_after(){
 			const obj = new this.$.$mol_view();
-			(obj.style) = () => ({"paddingTop": (this?.gap_after())});
+			(obj.style) = () => ({"paddingTop": (this.gap_after())});
 			return obj;
 		}
 		view_window(){
@@ -3110,7 +3110,7 @@ var $;
 			return obj;
 		}
 		style(){
-			return {"--main-color": (this?.color_main()), "--light-color": (this?.color_light())};
+			return {"--main-color": (this.color_main()), "--light-color": (this.color_light())};
 		}
 		colors(){
 			return [
@@ -3202,7 +3202,7 @@ var $;
 		}
 		Roof(){
 			const obj = new this.$.$mol_view();
-			(obj.sub) = () => ([(this?.roof())]);
+			(obj.sub) = () => ([(this.roof())]);
 			return obj;
 		}
 		complete(){
@@ -3214,17 +3214,17 @@ var $;
 		}
 		Ball(id){
 			const obj = new this.$.$hype_ballsort_ball_view();
-			(obj.ball) = () => ((this?.ball(id)));
+			(obj.ball) = () => ((this.ball(id)));
 			return obj;
 		}
 		balls(){
-			return [(this?.Ball("0"))];
+			return [(this.Ball("0"))];
 		}
 		Balls(){
 			const obj = new this.$.$mol_list();
 			(obj.style) = () => ({"min-height": "10rem"});
-			(obj.attr) = () => ({"data-complete": (this?.complete())});
-			(obj.rows) = () => ((this?.balls()));
+			(obj.attr) = () => ({"data-complete": (this.complete())});
+			(obj.rows) = () => ((this.balls()));
 			return obj;
 		}
 		tube(){
@@ -3235,10 +3235,10 @@ var $;
 			return false;
 		}
 		event(){
-			return {"click": (next) => (this?.click(next))};
+			return {"click": (next) => (this.click(next))};
 		}
 		rows(){
-			return [(this?.Roof()), (this?.Balls())];
+			return [(this.Roof()), (this.Balls())];
 		}
 	};
 	($mol_mem(($.$hype_ballsort_tube_view.prototype), "click"));
@@ -3469,7 +3469,7 @@ var $;
 		Title(){
 			const obj = new this.$.$mol_view();
 			(obj.dom_name) = () => ("h2");
-			(obj.sub) = () => ([(this?.Title_begin()), (this?.Title_end())]);
+			(obj.sub) = () => ([(this.Title_begin()), (this.Title_end())]);
 			return obj;
 		}
 		start(next){
@@ -3479,7 +3479,7 @@ var $;
 		Start(){
 			const obj = new this.$.$hype_ballsort_button();
 			(obj.title) = () => ("Start game");
-			(obj.click) = (next) => ((this?.start(next)));
+			(obj.click) = (next) => ((this.start(next)));
 			return obj;
 		}
 		Effector(){
@@ -3520,11 +3520,11 @@ var $;
 		Links(){
 			const obj = new this.$.$mol_view();
 			(obj.sub) = () => ([
-				(this?.Effector()), 
-				(this?.Reatom()), 
-				(this?.Vue()), 
-				(this?.Mol()), 
-				(this?.Sources())
+				(this.Effector()), 
+				(this.Reatom()), 
+				(this.Vue()), 
+				(this.Mol()), 
+				(this.Sources())
 			]);
 			return obj;
 		}
@@ -3535,13 +3535,13 @@ var $;
 		Home(){
 			const obj = new this.$.$hype_ballsort_button();
 			(obj.title) = () => ("←");
-			(obj.click) = (next) => ((this?.home(next)));
+			(obj.click) = (next) => ((this.home(next)));
 			return obj;
 		}
 		Restart(){
 			const obj = new this.$.$hype_ballsort_button();
 			(obj.title) = () => ("Restart ");
-			(obj.click) = (next) => ((this?.start(next)));
+			(obj.click) = (next) => ((this.start(next)));
 			return obj;
 		}
 		moves(){
@@ -3549,15 +3549,15 @@ var $;
 		}
 		Moves(){
 			const obj = new this.$.$mol_view();
-			(obj.sub) = () => ([(this?.moves())]);
+			(obj.sub) = () => ([(this.moves())]);
 			return obj;
 		}
 		Control(){
 			const obj = new this.$.$mol_view();
 			(obj.sub) = () => ([
-				(this?.Home()), 
-				(this?.Restart()), 
-				(this?.Moves())
+				(this.Home()), 
+				(this.Restart()), 
+				(this.Moves())
 			]);
 			return obj;
 		}
@@ -3574,17 +3574,17 @@ var $;
 		}
 		Tube(id){
 			const obj = new this.$.$hype_ballsort_tube_view();
-			(obj.tube) = () => ((this?.tube(id)));
-			(obj.click) = (next) => ((this?.tube_click(id, next)));
-			(obj.active) = () => ((this?.tube_active(id)));
+			(obj.tube) = () => ((this.tube(id)));
+			(obj.click) = (next) => ((this.tube_click(id, next)));
+			(obj.active) = () => ((this.tube_active(id)));
 			return obj;
 		}
 		tubes(){
-			return [(this?.Tube("0"))];
+			return [(this.Tube("0"))];
 		}
 		Tubes(){
 			const obj = new this.$.$mol_view();
-			(obj.sub) = () => ((this?.tubes()));
+			(obj.sub) = () => ((this.tubes()));
 			return obj;
 		}
 		Finish_title(){
@@ -3602,15 +3602,15 @@ var $;
 		Finish_home(){
 			const obj = new this.$.$hype_ballsort_button();
 			(obj.title) = () => ("New game");
-			(obj.click) = (next) => ((this?.home(next)));
+			(obj.click) = (next) => ((this.home(next)));
 			return obj;
 		}
 		Finish(){
 			const obj = new this.$.$mol_list();
 			(obj.rows) = () => ([
-				(this?.Finish_title()), 
-				(this?.Finish_moves()), 
-				(this?.Finish_home())
+				(this.Finish_title()), 
+				(this.Finish_moves()), 
+				(this.Finish_home())
 			]);
 			return obj;
 		}
@@ -3624,28 +3624,28 @@ var $;
 		Start_page(){
 			const obj = new this.$.$mol_list();
 			(obj.rows) = () => ([
-				(this?.Title()), 
-				(this?.Start()), 
-				(this?.Links())
+				(this.Title()), 
+				(this.Start()), 
+				(this.Links())
 			]);
 			return obj;
 		}
 		Game_page(){
 			const obj = new this.$.$mol_list();
 			(obj.rows) = () => ([
-				(this?.Control()), 
-				(this?.Tubes()), 
-				(this?.Links())
+				(this.Control()), 
+				(this.Tubes()), 
+				(this.Links())
 			]);
 			return obj;
 		}
 		Finish_page(){
 			const obj = new this.$.$mol_list();
 			(obj.rows) = () => ([
-				(this?.Control()), 
-				(this?.Tubes()), 
-				(this?.Links()), 
-				(this?.Finish())
+				(this.Control()), 
+				(this.Tubes()), 
+				(this.Links()), 
+				(this.Finish())
 			]);
 			return obj;
 		}
